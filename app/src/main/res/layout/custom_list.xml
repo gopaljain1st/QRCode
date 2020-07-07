@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:layout_margin="3dp"
+    android:id="@+id/order_history_cart"
+    app:cardElevation="5dp"
+    android:elevation="5dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+
+            android:background="#ec526576"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/orderIdText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="OrderId:"
+            android:textColor="#009471"
+            app:layout_constraintBottom_toTopOf="@+id/statustText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <TextView
+            android:id="@+id/statustText"
+            android:layout_width="wrap_content"
+            android:layout_height="17dp"
+            android:layout_marginStart="8dp"
+            android:text="Status:"
+            android:textColor="#009471"
+            app:layout_constraintBottom_toTopOf="@+id/totalSavingsText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/orderIdText" />
+
+        <TextView
+            android:id="@+id/totalSavingsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Total Items"
+            android:textColor="#009471"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/statustText" />
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ec526576"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.82" />
+
+        <TextView
+            android:id="@+id/orderId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textColor="#000"
+            app:layout_constraintBaseline_toBaselineOf="@+id/orderIdText"
+            app:layout_constraintStart_toStartOf="@+id/status" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textColor="#000"
+            app:layout_constraintBottom_toTopOf="@+id/total_savings"
+            app:layout_constraintStart_toStartOf="@+id/total_savings"
+            app:layout_constraintTop_toBottomOf="@+id/orderId" />
+
+        <TextView
+            android:id="@+id/total_savings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="TextView"
+            android:textColor="#000"
+            app:layout_constraintBaseline_toBaselineOf="@+id/totalSavingsText"
+            app:layout_constraintStart_toEndOf="@+id/totalSavingsText" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

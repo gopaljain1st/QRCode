@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:padding="20dp"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <LinearLayout
+        android:gravity="center"
+        android:padding="20dp"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <EditText
+                    android:id="@+id/id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:inputType="text"
+                    android:hint="Id" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_weight="0.7"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:inputType="textCapWords"
+                    android:hint="Item Name" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_weight="0.7"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <EditText
+                    android:id="@+id/type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:inputType="textCapWords"
+                    android:hint="Item Type" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_weight="0.7"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <EditText
+                    android:id="@+id/price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:inputType="phone"
+                    android:hint="Item Price" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_weight="0.7"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <EditText
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:inputType="textCapWords"
+                    android:hint="Item Description" />
+            </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#000000"
+            android:text="Save"
+            android:id="@+id/submit"
+            android:textColor="#FFFFFF"
+            />
+    </LinearLayout>
+</ScrollView>
+</LinearLayout>

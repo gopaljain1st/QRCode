@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:fillViewport="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="3dp"
+    android:padding="20dp"
+    android:id="@+id/order_history_cart"
+    app:cardElevation="5dp"
+    android:elevation="5dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="20dp"
+        >
+        <LinearLayout
+            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="20dp"
+            >
+            <TextView
+                android:textColor="#000"
+                android:layout_width="0dp"
+                android:layout_weight="0.6"
+                android:layout_height="wrap_content"
+                android:text=" Id : "
+                android:textSize="17dp"
+                />
+            <TextView
+                android:textColor="#000"
+                android:id="@+id/id"
+                android:layout_width="0dp"
+                android:layout_weight="1.4"
+                android:layout_height="wrap_content"
+                android:text=" 12343565245745 "
+                android:textSize="17dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="20dp"
+            >
+            <TextView
+                android:textColor="#000"
+                android:layout_width="0dp"
+                android:layout_weight="0.6"
+                android:layout_height="wrap_content"
+                android:text="Name : "
+                android:textSize="17dp"
+                />
+            <TextView
+                android:textColor="#000"
+                android:id="@+id/name"
+                android:layout_width="0dp"
+                android:layout_weight="1.4"
+                android:layout_height="wrap_content"
+                android:text=" Chips "
+                android:textSize="17dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="20dp"
+            >
+            <TextView
+                android:textColor="#000"
+                android:layout_width="0dp"
+                android:layout_weight="0.6"
+                android:layout_height="wrap_content"
+                android:text="Type : "
+                android:textSize="17dp"
+                />
+            <TextView
+                android:textColor="#000"
+                android:id="@+id/type"
+                android:layout_width="0dp"
+                android:layout_weight="1.4"
+                android:layout_height="wrap_content"
+                android:text=" Veg "
+                android:textSize="17dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="20dp"
+            >
+            <TextView
+                android:textColor="#000"
+                android:layout_width="0dp"
+                android:layout_weight="0.6"
+                android:layout_height="wrap_content"
+                android:text="Price: "
+                android:textSize="17dp"
+                />
+            <TextView
+                android:textColor="#000"
+                android:id="@+id/price"
+                android:layout_width="0dp"
+                android:layout_weight="1.4"
+                android:layout_height="wrap_content"
+                android:text=" \u20B9 120/-"
+                android:textSize="17dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="20dp"
+            >
+            <TextView
+                android:textColor="#000"
+                android:layout_width="0dp"
+                android:layout_weight="0.6"
+                android:layout_height="wrap_content"
+                android:text="Date : "
+                android:textSize="17dp"
+                />
+            <TextView
+                android:textColor="#000"
+                android:id="@+id/date"
+                android:layout_width="0dp"
+                android:layout_weight="1.4"
+                android:layout_height="wrap_content"
+                android:text=" 07/07/2020 "
+                android:textSize="17dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="20dp"
+            >
+            <TextView
+                android:textColor="#000"
+                android:layout_width="0dp"
+                android:layout_weight="0.6"
+                android:layout_height="wrap_content"
+                android:text="Description : "
+                android:textSize="17dp"
+                />
+            <TextView
+                android:textColor="#000"
+                android:id="@+id/description"
+                android:layout_width="0dp"
+                android:layout_weight="1.4"
+                android:layout_height="wrap_content"
+                android:text=" Chips is test long message yeb hdfjdjsf hjdfjhd dskfhsdfhf hdfjdhfjfbjdhfjhf djfbdjf hhhhjfd jfbfdj jfbdjf  "
+                android:textSize="17dp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+</ScrollView>
