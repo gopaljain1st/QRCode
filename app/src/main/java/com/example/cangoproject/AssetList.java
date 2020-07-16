@@ -35,7 +35,7 @@ public class AssetList extends AppCompatActivity {
         al=new ArrayList<>();
         readFromLocalStorage();
         rv.setLayoutManager(manager);
-        //adapter=new MyAdapter(this,al);
+        adapter=new MyAdapter(this,al);
         rv.setAdapter(adapter);
 
         ActionBar actionBar=getSupportActionBar();

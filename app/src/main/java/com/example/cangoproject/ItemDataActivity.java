@@ -48,7 +48,7 @@ public class ItemDataActivity extends AppCompatActivity
         region=findViewById(R.id.region);
         site=findViewById(R.id.site);
         location=findViewById(R.id.location);
-        deparment=findViewById(R.id.deparment);
+        deparment=findViewById(R.id.department);
         managedBy=findViewById(R.id.managedBy);
         productType=findViewById(R.id.productType);
         assetState=findViewById(R.id.assetState);
