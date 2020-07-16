@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">CanGoProject</string>
+
+    <string-array name="type_string">
+        <item>Router</item>
+        <item>Switch</item>
+    </string-array>
+    <string-array name="asset_state">
+        <item>Diployed</item>
+        <item>Transfer</item>
+        <item>Movement</item>
+        <item>Dismental</item>
+    </string-array>
+    <string-array name="vendor">
+        <item>Nokia</item>
+        <item>Cisco</item>
+        <item>Vivo</item>
+    </string-array>
+    <string-array name="asset_type">
+        <item>Active</item>
+        <item>Passive</item>
+    </string-array>
+    <string name="type_prompt">Select Product Type</string>
+    <string name="asset_type_prompt">Select Asset Type</string>
+    <string name="asset_state_prompt">Select Asset State</string>
+    <string name="vendor_prompt">Select Vendor</string>
 </resources>

@@ -19,10 +19,9 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        android:padding="20dp"
         >
         <LinearLayout
-            android:padding="20dp"
+            android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -48,7 +47,7 @@
                 />
         </LinearLayout>
         <LinearLayout
-            android:padding="20dp"
+            android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -74,7 +73,7 @@
                 />
         </LinearLayout>
         <LinearLayout
-            android:padding="20dp"
+            android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -100,7 +99,7 @@
                 />
         </LinearLayout>
         <LinearLayout
-            android:padding="20dp"
+            android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -126,7 +125,7 @@
                 />
         </LinearLayout>
         <LinearLayout
-            android:padding="20dp"
+            android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -138,21 +137,21 @@
                 android:layout_width="0dp"
                 android:layout_weight="0.6"
                 android:layout_height="wrap_content"
-                android:text="Date : "
+                android:text="Product Type:"
                 android:textSize="17dp"
                 />
             <TextView
                 android:textColor="#000"
-                android:id="@+id/date"
+                android:id="@+id/productType"
                 android:layout_width="0dp"
                 android:layout_weight="1.4"
                 android:layout_height="wrap_content"
-                android:text=" 07/07/2020 "
+                android:text="productType"
                 android:textSize="17dp"
                 />
         </LinearLayout>
         <LinearLayout
-            android:padding="20dp"
+            android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -164,16 +163,295 @@
                 android:layout_width="0dp"
                 android:layout_weight="0.6"
                 android:layout_height="wrap_content"
-                android:text="Description : "
+                android:text="Asset State: "
                 android:textSize="17dp"
                 />
             <TextView
                 android:textColor="#000"
-                android:id="@+id/description"
+                android:id="@+id/assetState"
                 android:layout_width="0dp"
                 android:layout_weight="1.4"
                 android:layout_height="wrap_content"
-                android:text=" Chips is test long message yeb hdfjdjsf hjdfjhd dskfhsdfhf hdfjdhfjfbjdhfjhf djfbdjf hhhhjfd jfbfdj jfbdjf  "
+                android:text=" assetState"
+                android:textSize="17dp"
+                />
+        </LinearLayout><LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginBottom="20dp"
+        >
+        <TextView
+            android:textColor="#000"
+            android:layout_width="0dp"
+            android:layout_weight="0.6"
+            android:layout_height="wrap_content"
+            android:text="Vendor : "
+            android:textSize="17dp"
+            />
+        <TextView
+            android:textColor="#000"
+            android:id="@+id/vendor"
+            android:layout_width="0dp"
+            android:layout_weight="1.4"
+            android:layout_height="wrap_content"
+            android:text=" vendor"
+            android:textSize="17dp"
+            />
+    </LinearLayout><LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginBottom="20dp"
+        >
+        <TextView
+            android:textColor="#000"
+            android:layout_width="0dp"
+            android:layout_weight="0.6"
+            android:layout_height="wrap_content"
+            android:text="Asset Type: "
+            android:textSize="17dp"
+            />
+        <TextView
+            android:textColor="#000"
+            android:id="@+id/assetType"
+            android:layout_width="0dp"
+            android:layout_weight="1.4"
+            android:layout_height="wrap_content"
+            android:text=" assetType"
+            android:textSize="17dp"
+            />
+    </LinearLayout><LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginBottom="20dp"
+        >
+        <TextView
+            android:textColor="#000"
+            android:layout_width="0dp"
+            android:layout_weight="0.6"
+            android:layout_height="wrap_content"
+            android:text="Asset Category: "
+            android:textSize="17dp"
+            />
+        <TextView
+            android:textColor="#000"
+            android:id="@+id/assetCategory"
+            android:layout_width="0dp"
+            android:layout_weight="1.4"
+            android:layout_height="wrap_content"
+            android:text=" assetCategory"
+            android:textSize="17dp"
+            />
+    </LinearLayout><LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginBottom="20dp"
+        >
+        <TextView
+            android:textColor="#000"
+            android:layout_width="0dp"
+            android:layout_weight="0.6"
+            android:layout_height="wrap_content"
+            android:text="Assocutation Gate: "
+            android:textSize="17dp"
+            />
+        <TextView
+            android:textColor="#000"
+            android:id="@+id/assocutationGate"
+            android:layout_width="0dp"
+            android:layout_weight="1.4"
+            android:layout_height="wrap_content"
+            android:text=" assocutationGate"
+            android:textSize="17dp"
+            />
+    </LinearLayout><LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginBottom="20dp"
+        >
+        <TextView
+            android:textColor="#000"
+            android:layout_width="0dp"
+            android:layout_weight="0.6"
+            android:layout_height="wrap_content"
+            android:text="Expiry Date: "
+            android:textSize="17dp"
+            />
+        <TextView
+            android:textColor="#000"
+            android:id="@+id/expiryDate"
+            android:layout_width="0dp"
+            android:layout_weight="1.4"
+            android:layout_height="wrap_content"
+            android:text=" expiryDate"
+            android:textSize="17dp"
+            />
+    </LinearLayout><LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginBottom="20dp"
+        >
+        <TextView
+            android:textColor="#000"
+            android:layout_width="0dp"
+            android:layout_weight="0.6"
+            android:layout_height="wrap_content"
+            android:text="Serior No: "
+            android:textSize="17dp"
+            />
+        <TextView
+            android:textColor="#000"
+            android:id="@+id/seriorNo"
+            android:layout_width="0dp"
+            android:layout_weight="1.4"
+            android:layout_height="wrap_content"
+            android:text=" seriorNo"
+            android:textSize="17dp"
+            />
+    </LinearLayout><LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginBottom="20dp"
+        >
+        <TextView
+            android:textColor="#000"
+            android:layout_width="0dp"
+            android:layout_weight="0.6"
+            android:layout_height="wrap_content"
+            android:text="Region: "
+            android:textSize="17dp"
+            />
+        <TextView
+            android:textColor="#000"
+            android:id="@+id/region"
+            android:layout_width="0dp"
+            android:layout_weight="1.4"
+            android:layout_height="wrap_content"
+            android:text=" region"
+            android:textSize="17dp"
+            />
+    </LinearLayout>
+        <LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginBottom="20dp"
+        >
+        <TextView
+            android:textColor="#000"
+            android:layout_width="0dp"
+            android:layout_weight="0.6"
+            android:layout_height="wrap_content"
+            android:text="Site: "
+            android:textSize="17dp"
+            />
+        <TextView
+            android:textColor="#000"
+            android:id="@+id/site"
+            android:layout_width="0dp"
+            android:layout_weight="1.4"
+            android:layout_height="wrap_content"
+            android:text=" site"
+            android:textSize="17dp"
+            />
+    </LinearLayout>
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="20dp"
+            >
+            <TextView
+                android:textColor="#000"
+                android:layout_width="0dp"
+                android:layout_weight="0.6"
+                android:layout_height="wrap_content"
+                android:text="Location: "
+                android:textSize="17dp"
+                />
+            <TextView
+                android:textColor="#000"
+                android:id="@+id/location"
+                android:layout_width="0dp"
+                android:layout_weight="1.4"
+                android:layout_height="wrap_content"
+                android:text=" location"
+                android:textSize="17dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="20dp"
+            >
+            <TextView
+                android:textColor="#000"
+                android:layout_width="0dp"
+                android:layout_weight="0.6"
+                android:layout_height="wrap_content"
+                android:text="Department: "
+                android:textSize="17dp"
+                />
+            <TextView
+                android:textColor="#000"
+                android:id="@+id/department"
+                android:layout_width="0dp"
+                android:layout_weight="1.4"
+                android:layout_height="wrap_content"
+                android:text=" department"
+                android:textSize="17dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="20dp"
+            >
+            <TextView
+                android:textColor="#000"
+                android:layout_width="0dp"
+                android:layout_weight="0.6"
+                android:layout_height="wrap_content"
+                android:text="Managed By: "
+                android:textSize="17dp"
+                />
+            <TextView
+                android:textColor="#000"
+                android:id="@+id/managedBy"
+                android:layout_width="0dp"
+                android:layout_weight="1.4"
+                android:layout_height="wrap_content"
+                android:text=" managedBy"
                 android:textSize="17dp"
                 />
         </LinearLayout>

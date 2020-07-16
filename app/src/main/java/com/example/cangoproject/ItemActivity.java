@@ -21,27 +21,40 @@ public class ItemActivity extends AppCompatActivity
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item);
-        final Item i= (Item) getIntent().getSerializableExtra("item");
+        final Product i= (Product) getIntent().getSerializableExtra("product");
         data=findViewById(R.id.information);
         barcode=findViewById(R.id.barcode);
         data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(ItemActivity.this,ItemDataActivity.class);
-                intent.putExtra("item",i);
+                intent.putExtra("product",i);
                 startActivity(intent);
             }
         });
         barcode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                HashMap<String, Item> hm = new HashMap<>();
-                hm.put("item",i);
-                Gson gson = new Gson();
-                final String jsonData = gson.toJson(hm);
 
+                String message="";
+                message+="Id :"+i.getId()+"\n";
+                message+="NName : "+i.getName()+"\n";
+                message+="Barcode ID : "+i.getType()+"\n";
+                message+="Product : "+i.getPrice()+"\n";
+                message+="Asset State : "+i.getAssetState()+"\n";
+                message+="Vendor : "+i.getVendor()+"\n";
+                message+="Asset Type : "+i.getAssetType()+"\n";
+                message+="Asset Category : "+i.getAssetCategory()+"\n";
+                message+="Assocutation Gate : "+i.getAssocutationGate()+"\n";
+                message+="Expiry Date : "+i.getExpiryDate()+"\n";
+                message+="Serior No : "+i.getSeriorNo()+"\n";
+                message+="Region : "+i.getRegion()+"\n";
+                message+="Site : "+i.getSite()+"\n";
+                message+="Location : "+i.getLocation()+"\n";
+                message+="Department : "+i.getDeparment()+"\n";
+                message+="Managed By : "+i.getManagedBy()+"\n";
                 Intent intent=new Intent(ItemActivity.this,MainActivity.class);
-                intent.putExtra("data",jsonData);
+                intent.putExtra("data",message);
                 startActivity(intent);
             }
         });

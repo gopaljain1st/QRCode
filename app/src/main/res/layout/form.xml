@@ -42,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:padding="15dp"
                     android:inputType="textCapWords"
-                    android:hint="Item Name" />
+                    android:hint="N Name" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -56,7 +56,7 @@
                     android:layout_height="wrap_content"
                     android:padding="15dp"
                     android:inputType="textCapWords"
-                    android:hint="Item Type" />
+                    android:hint="Barcode Id" />
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -69,21 +69,178 @@
                     android:layout_height="wrap_content"
                     android:padding="15dp"
                     android:inputType="phone"
-                    android:hint="Item Price" />
+                    android:hint="Product" />
             </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
+        <Spinner
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/product_type"
+            android:entries="@array/type_string"
+            android:prompt="@string/type_prompt"
+            android:spinnerMode="dialog"
+            />
+        <Spinner
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/asset_state"
+            android:prompt="@string/asset_state_prompt"
+            android:entries="@array/asset_state"
+            android:spinnerMode="dialog"
+            />
+        <Spinner
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/vendor"
+            android:entries="@array/vendor"
+            android:prompt="@string/vendor_prompt"
+            android:spinnerMode="dialog"
+            />
+        <Spinner
+            android:prompt="@string/asset_type_prompt"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/asset_type"
+            android:entries="@array/asset_type"
+            android:spinnerMode="dialog"
+            />
+        <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_weight="0.7"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp">
                 <EditText
-                    android:id="@+id/description"
+                    android:id="@+id/assetCategory"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="15dp"
                     android:inputType="textCapWords"
-                    android:hint="Item Description" />
+                    android:hint="Asset Category" />
             </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_weight="0.7"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+            <EditText
+                android:id="@+id/assocutationGate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:inputType="textCapWords"
+                android:hint="Assocutation Gate" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_weight="0.7"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+            <EditText
+                android:id="@+id/expiryDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:inputType="textCapWords"
+                android:hint="Expiry Date" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_weight="0.7"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+            <EditText
+                android:id="@+id/seriorNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:inputType="textCapWords"
+                android:hint="Serior No" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_weight="0.7"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+            <EditText
+                android:id="@+id/region"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:inputType="textCapWords"
+                android:hint="Region" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_weight="0.7"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+            <EditText
+                android:id="@+id/site"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:inputType="textCapWords"
+                android:hint="Site" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_weight="0.7"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+            <EditText
+                android:id="@+id/location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:inputType="textCapWords"
+                android:hint="Location" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_weight="0.7"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+            <EditText
+                android:id="@+id/deparment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:inputType="textCapWords"
+                android:hint="Deparment" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_weight="0.7"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+            <EditText
+                android:id="@+id/managedBy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:inputType="textCapWords"
+                android:hint="Managed By" />
+        </com.google.android.material.textfield.TextInputLayout>
+
         <Button
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"

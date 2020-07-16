@@ -16,9 +16,9 @@ import java.util.ArrayList;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyAdapterViewHolder>
 {
     Context context;
-    ArrayList<Item>al;
+    ArrayList<Product>al;
 
-    public MyAdapter(Context context, ArrayList<Item> al) {
+    public MyAdapter(Context context, ArrayList<Product> al) {
         this.context = context;
         this.al = al;
     }
@@ -33,14 +33,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyAdapterViewHolde
     @Override
     public void onBindViewHolder(@NonNull MyAdapterViewHolder holder, int position) {
 
-        final Item c=al.get(position);
+        final Product c=al.get(position);
         holder.name.setText("Name : "+c.getName());
         holder.id.setText("Id : "+c.getId());
         holder.item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(context,ItemActivity.class);
-                intent.putExtra("item",c);
+                intent.putExtra("product",c);
                 context.startActivity(intent);
             }
         });

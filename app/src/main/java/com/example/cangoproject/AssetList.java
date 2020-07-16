@@ -23,7 +23,7 @@ public class AssetList extends AppCompatActivity {
     RecyclerView rv;
     LinearLayoutManager manager;
     RecyclerView.Adapter<MyAdapter.MyAdapterViewHolder>adapter;
-    ArrayList<Item> al;
+    ArrayList<Product> al;
     TextView text;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class AssetList extends AppCompatActivity {
         al=new ArrayList<>();
         readFromLocalStorage();
         rv.setLayoutManager(manager);
-        adapter=new MyAdapter(this,al);
+        //adapter=new MyAdapter(this,al);
         rv.setAdapter(adapter);
 
         ActionBar actionBar=getSupportActionBar();
@@ -83,7 +83,7 @@ public class AssetList extends AppCompatActivity {
     {
         DatabaseHelper helper=new DatabaseHelper(this);
         SQLiteDatabase sqLiteDatabase=helper.getReadableDatabase();
-        Cursor c=sqLiteDatabase.rawQuery("select * from item",null);
+        Cursor c=sqLiteDatabase.rawQuery("select * from product",null);
         while(c.moveToNext())
         {
             text.setVisibility(View.INVISIBLE);
@@ -91,9 +91,20 @@ public class AssetList extends AppCompatActivity {
             String name = c.getString(2);
             String type = c.getString(3);
             String price = c.getString(4);
-            String description = c.getString(5);
-            String date = c.getString(6);
-            al.add(new Item(id,name,type,price,description,date));
+            String productType = c.getString(5);
+            String assetState = c.getString(6);
+            String vendor = c.getString(7);
+            String assetType = c.getString(8);
+            String assetCategory = c.getString(9);
+            String assocutationGate = c.getString(10);
+            String expiryDate = c.getString(11);
+            String seriorNo = c.getString(12);
+            String region = c.getString(13);
+            String site = c.getString(14);
+            String location = c.getString(15);
+            String department = c.getString(16);
+            String managedBy = c.getString(17);
+            al.add(new Product(id,name,type,price,productType,assetState,vendor,assetType,assetCategory,assocutationGate,expiryDate,seriorNo,region,site,location,department,managedBy));
         }
         c.close();
         helper.close();
