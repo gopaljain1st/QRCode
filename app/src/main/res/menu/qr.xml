@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/scanimage1"
+        android:title="Qr List"
+        android:id="@+id/qr"></item>
+</menu>

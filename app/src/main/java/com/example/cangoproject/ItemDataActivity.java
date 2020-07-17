@@ -1,6 +1,7 @@
 package com.example.cangoproject;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -73,6 +74,22 @@ public class ItemDataActivity extends AppCompatActivity
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.qr,menu);
+        MenuItem menuItem=menu.findItem(R.id.qr);
+        menuItem.setOnMenuItemClickListener(
+                new MenuItem.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem)
+                    {
+
+                        finish();
+                        return true;
+                    }
+                });
+        return super.onCreateOptionsMenu(menu);
     }
 
 }

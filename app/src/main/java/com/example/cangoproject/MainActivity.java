@@ -53,10 +53,10 @@ public class MainActivity extends AppCompatActivity {
     private Bitmap myBitmap;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.barcode);
-
         message = getIntent().getStringExtra("data");
         type = "QR Code";
         imageView =findViewById(R.id.barcode);
