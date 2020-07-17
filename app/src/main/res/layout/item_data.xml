@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="2"
-            android:layout_marginBottom="20dp"
+
             >
             <TextView
                 android:textColor="#000"
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="2"
-            android:layout_marginBottom="20dp"
+
             >
             <TextView
                 android:textColor="#000"
@@ -78,7 +78,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="2"
-            android:layout_marginBottom="20dp"
+
             >
             <TextView
                 android:textColor="#000"
@@ -104,7 +104,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="2"
-            android:layout_marginBottom="20dp"
+
             >
             <TextView
                 android:textColor="#000"
@@ -130,7 +130,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="2"
-            android:layout_marginBottom="20dp"
+
             >
             <TextView
                 android:textColor="#000"
@@ -156,7 +156,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="2"
-            android:layout_marginBottom="20dp"
+
             >
             <TextView
                 android:textColor="#000"
@@ -181,7 +181,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="2"
-        android:layout_marginBottom="20dp"
+
         >
         <TextView
             android:textColor="#000"
@@ -206,7 +206,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="2"
-        android:layout_marginBottom="20dp"
+
         >
         <TextView
             android:textColor="#000"
@@ -231,7 +231,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="2"
-        android:layout_marginBottom="20dp"
+
         >
         <TextView
             android:textColor="#000"
@@ -256,7 +256,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="2"
-        android:layout_marginBottom="20dp"
+
         >
         <TextView
             android:textColor="#000"
@@ -281,7 +281,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="2"
-        android:layout_marginBottom="20dp"
+
         >
         <TextView
             android:textColor="#000"
@@ -306,7 +306,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="2"
-        android:layout_marginBottom="20dp"
+
         >
         <TextView
             android:textColor="#000"
@@ -331,7 +331,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="2"
-        android:layout_marginBottom="20dp"
+
         >
         <TextView
             android:textColor="#000"
@@ -357,7 +357,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="2"
-        android:layout_marginBottom="20dp"
+
         >
         <TextView
             android:textColor="#000"
@@ -383,7 +383,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="2"
-            android:layout_marginBottom="20dp"
+
             >
             <TextView
                 android:textColor="#000"
@@ -409,7 +409,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="2"
-            android:layout_marginBottom="20dp"
+
             >
             <TextView
                 android:textColor="#000"
@@ -435,7 +435,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="2"
-            android:layout_marginBottom="20dp"
+
             >
             <TextView
                 android:textColor="#000"

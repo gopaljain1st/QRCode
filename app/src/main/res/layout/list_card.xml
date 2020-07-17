@@ -25,7 +25,7 @@
             android:layout_marginStart="8dp"
             android:text="Id : 123451524373263"
             android:textSize="17sp"
-            android:textColor="@color/colorPrimary"
+            android:textColor="#000"
           />
         <TextView
             android:id="@+id/name"
@@ -35,7 +35,7 @@
             android:layout_marginStart="8dp"
             android:text="Name : Namkeen"
             android:textSize="17sp"
-            android:textColor="@color/colorPrimary"
+            android:textColor="#000"
             />
     </LinearLayout>
     <ImageView
@@ -45,5 +45,11 @@
         android:layout_height="match_parent"
         android:src="@drawable/right_arrow"
         />
+
 </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent" />
+
 </LinearLayout>

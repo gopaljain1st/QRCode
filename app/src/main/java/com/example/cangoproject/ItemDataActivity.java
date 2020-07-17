@@ -1,9 +1,11 @@
 package com.example.cangoproject;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ItemDataActivity extends AppCompatActivity 
@@ -14,6 +16,9 @@ public class ItemDataActivity extends AppCompatActivity
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_data);
+
+        ActionBar actionBar=getSupportActionBar();
+        actionBar.setTitle("Details");
         initComponent();
         Product i= (Product) getIntent().getSerializableExtra("product");
         id.setText(i.getId());
@@ -33,6 +38,8 @@ public class ItemDataActivity extends AppCompatActivity
         assetState.setText(i.getAssetState());
         productType.setText(i.getProductType());
         vendor.setText(i.getVendor());
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
     private void initComponent()
@@ -55,4 +62,17 @@ public class ItemDataActivity extends AppCompatActivity
         assetType=findViewById(R.id.assetType);
         vendor=findViewById(R.id.vendor);
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
 }

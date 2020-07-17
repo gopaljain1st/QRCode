@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,11 +17,17 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class HomePageActivity extends AppCompatActivity {
 
     CardView cardView;
+
+    SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+       sharedPreferences=getSharedPreferences("text",MODE_PRIVATE);
 
+       if(sharedPreferences.getString("serialId","0").equals("0")){
+           SharedPreferences.Editor editor=sharedPreferences.edit();
+       }
         ActionBar actionBar=getSupportActionBar();
         actionBar.setTitle("Dashboard");
         cardView = findViewById(R.id.card);

@@ -62,12 +62,7 @@ public class Form extends AppCompatActivity
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(id.getText().toString().trim().equals("")||name.getText().toString().trim().equals("")||type.getText().toString().trim().equals("")||price.getText().toString().trim().equals("")
-                        || assetCategory.getText().toString().trim().equals("") || assocutationGate.getText().toString().trim().equals("")
-            || expiryDate.getText().toString().trim().equals("") || seriorNo.getText().toString().trim().equals("") ||  region.getText().toString().trim().equals("") || site.getText().toString().trim().equals("") || location.getText().toString().trim().equals("") ||
-                deparment.getText().toString().trim().equals("") || managedBy.getText().toString().trim().equals(""))
-                    Toast.makeText(Form.this, "Please Fill All The Details", Toast.LENGTH_SHORT).show();
-                 else saveToLocalStorage();
+                saveToLocalStorage();
             }
         });
     }
