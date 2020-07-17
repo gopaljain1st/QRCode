@@ -39,7 +39,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyAdapterViewHolde
         holder.item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(context,ItemActivity.class);
+                Intent intent=new Intent(context,ItemDataActivity.class);
                 intent.putExtra("product",c);
                 context.startActivity(intent);
             }

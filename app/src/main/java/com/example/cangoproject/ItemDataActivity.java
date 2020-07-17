@@ -1,5 +1,6 @@
 package com.example.cangoproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class ItemDataActivity extends AppCompatActivity 
 {
     TextView id,name,type,price,assetCategory,assocutationGate,expiryDate,seriorNo,region,site,location,deparment,managedBy,productType,assetState,vendor,assetType;
-
+    Product i;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +22,7 @@ public class ItemDataActivity extends AppCompatActivity
         ActionBar actionBar=getSupportActionBar();
         actionBar.setTitle("Details");
         initComponent();
-        Product i= (Product) getIntent().getSerializableExtra("product");
+         i= (Product) getIntent().getSerializableExtra("product");
         id.setText(i.getId());
         name.setText(i.getName());
         type.setText(i.getType());
@@ -84,8 +85,26 @@ public class ItemDataActivity extends AppCompatActivity
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem)
                     {
-
-                        finish();
+                        String message="";
+                        message+="Id :"+i.getId()+"\n";
+                        message+="NName : "+i.getName()+"\n";
+                        message+="Barcode ID : "+i.getType()+"\n";
+                        message+="Product : "+i.getPrice()+"\n";
+                        message+="Asset State : "+i.getAssetState()+"\n";
+                        message+="Vendor : "+i.getVendor()+"\n";
+                        message+="Asset Type : "+i.getAssetType()+"\n";
+                        message+="Asset Category : "+i.getAssetCategory()+"\n";
+                        message+="Assocutation Gate : "+i.getAssocutationGate()+"\n";
+                        message+="Expiry Date : "+i.getExpiryDate()+"\n";
+                        message+="Serior No : "+i.getSeriorNo()+"\n";
+                        message+="Region : "+i.getRegion()+"\n";
+                        message+="Site : "+i.getSite()+"\n";
+                        message+="Location : "+i.getLocation()+"\n";
+                        message+="Department : "+i.getDeparment()+"\n";
+                        message+="Managed By : "+i.getManagedBy()+"\n";
+                        Intent intent=new Intent(ItemDataActivity.this,MainActivity.class);
+                        intent.putExtra("data",message);
+                        startActivity(intent);
                         return true;
                     }
                 });

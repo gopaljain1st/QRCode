@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -17,17 +18,35 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class HomePageActivity extends AppCompatActivity {
 
     CardView cardView;
-
+    TextView noOfAssest;
     SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+        noOfAssest=findViewById(R.id.noOfAssest);
+
        sharedPreferences=getSharedPreferences("text",MODE_PRIVATE);
 
        if(sharedPreferences.getString("serialId","0").equals("0")){
            SharedPreferences.Editor editor=sharedPreferences.edit();
+           editor.putString("serialId",""+1);
+           editor.commit();
        }
+       if(sharedPreferences.getString("assertCount","-1").equals("-1"))
+       {
+           SharedPreferences.Editor editor=sharedPreferences.edit();
+           editor.putString("assertCount","0");
+           editor.commit();
+       }
+       noOfAssest.setText(sharedPreferences.getString("assertCount","0"));
+       noOfAssest.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               startActivity(new Intent(getApplicationContext(),AssetList.class));
+           }
+       });
+
         ActionBar actionBar=getSupportActionBar();
         actionBar.setTitle("Dashboard");
         cardView = findViewById(R.id.card);

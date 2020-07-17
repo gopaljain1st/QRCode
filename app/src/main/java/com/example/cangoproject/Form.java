@@ -8,6 +8,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -47,6 +48,8 @@ public class Form extends AppCompatActivity
         initComponent();
         Intent in=getIntent();
         String result=in.getStringExtra("result");
+        SharedPreferences sp=getSharedPreferences("text",MODE_PRIVATE);
+        seriorNo.setText(sp.getString("serialId","0"));
         String arr[]=result.split(":|\\\n");
         try
         {
@@ -94,6 +97,17 @@ public class Form extends AppCompatActivity
         db.insert("product",null,values);
         db.close();
         helper.close();
+        SharedPreferences sp =getSharedPreferences("text",MODE_PRIVATE);
+        String count=sp.getString("assertCount","0");
+        String sNo=sp.getString("serialId","0");
+        int serialNo=Integer.parseInt(sNo);
+        serialNo+=1;
+        int i=Integer.parseInt(count);
+        i+=1;
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString("assertCount",""+i);
+        editor.putString("serialId",""+serialNo);
+        editor.commit();
         Toast.makeText(this, "Data Saved", Toast.LENGTH_SHORT).show();
         startActivity(new Intent(Form.this,HomePageActivity.class));
         finish();
