@@ -4,20 +4,57 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class ItemDataActivity extends AppCompatActivity 
 {
     TextView id,name,type,price,assetCategory,assocutationGate,expiryDate,seriorNo,region,site,location,deparment,managedBy,productType,assetState,vendor,assetType;
     Product i;
+    Toolbar toolbar;
+    ImageView qrCode;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_data);
+
+        toolbar=findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setTitleTextColor(getResources().getColor(R.color.white));
+        toolbar.setTitle("Assert Data");
+
+        qrCode=findViewById(R.id.qrCode);
+        qrCode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String message="";
+                message+="Id :"+i.getId()+"\n";
+                message+="NName : "+i.getName()+"\n";
+                message+="Barcode ID : "+i.getType()+"\n";
+                message+="Product : "+i.getPrice()+"\n";
+                message+="Asset State : "+i.getAssetState()+"\n";
+                message+="Vendor : "+i.getVendor()+"\n";
+                message+="Asset Type : "+i.getAssetType()+"\n";
+                message+="Asset Category : "+i.getAssetCategory()+"\n";
+                message+="Assocutation Gate : "+i.getAssocutationGate()+"\n";
+                message+="Expiry Date : "+i.getExpiryDate()+"\n";
+                message+="Serior No : "+i.getSeriorNo()+"\n";
+                message+="Region : "+i.getRegion()+"\n";
+                message+="Site : "+i.getSite()+"\n";
+                message+="Location : "+i.getLocation()+"\n";
+                message+="Department : "+i.getDeparment()+"\n";
+                message+="Managed By : "+i.getManagedBy()+"\n";
+                Intent intent=new Intent(ItemDataActivity.this,MainActivity.class);
+                intent.putExtra("data",message);
+                startActivity(intent);
+            }
+        });
 
         ActionBar actionBar=getSupportActionBar();
         actionBar.setTitle("Details");
@@ -76,39 +113,4 @@ public class ItemDataActivity extends AppCompatActivity
     public void onBackPressed() {
         super.onBackPressed();
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.qr,menu);
-        MenuItem menuItem=menu.findItem(R.id.qr);
-        menuItem.setOnMenuItemClickListener(
-                new MenuItem.OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem menuItem)
-                    {
-                        String message="";
-                        message+="Id :"+i.getId()+"\n";
-                        message+="NName : "+i.getName()+"\n";
-                        message+="Barcode ID : "+i.getType()+"\n";
-                        message+="Product : "+i.getPrice()+"\n";
-                        message+="Asset State : "+i.getAssetState()+"\n";
-                        message+="Vendor : "+i.getVendor()+"\n";
-                        message+="Asset Type : "+i.getAssetType()+"\n";
-                        message+="Asset Category : "+i.getAssetCategory()+"\n";
-                        message+="Assocutation Gate : "+i.getAssocutationGate()+"\n";
-                        message+="Expiry Date : "+i.getExpiryDate()+"\n";
-                        message+="Serior No : "+i.getSeriorNo()+"\n";
-                        message+="Region : "+i.getRegion()+"\n";
-                        message+="Site : "+i.getSite()+"\n";
-                        message+="Location : "+i.getLocation()+"\n";
-                        message+="Department : "+i.getDeparment()+"\n";
-                        message+="Managed By : "+i.getManagedBy()+"\n";
-                        Intent intent=new Intent(ItemDataActivity.this,MainActivity.class);
-                        intent.putExtra("data",message);
-                        startActivity(intent);
-                        return true;
-                    }
-                });
-        return super.onCreateOptionsMenu(menu);
-    }
-
 }

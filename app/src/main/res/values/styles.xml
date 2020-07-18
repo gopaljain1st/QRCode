@@ -7,5 +7,39 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
+    <style name="AppTheme.PopupOverlay" parent="Theme.AppCompat.Light" />
+    <style name="myTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+<style name="whiteTheme">
+    <item name="background">@color/white</item>
+</style>
+
+    <style name="myTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="myTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" >
+        <item name="drawerArrowStyle">@style/DrawerArrowStyl</item>
+
+    </style>
+
+    <style name="DrawerArrowStyl" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="thickness">2dp</item>
+        <item name="actionBarSize">18dp</item>
+        <item name="gapBetweenBars">3dp</item>
+        <item name="drawableSize">24dp</item>
+        <item name="color">#000000</item>
+    </style>
+
+    <style name="myTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" >
+        <item name="drawerArrowStyle">@style/DrawerArrowStyl</item>
+    </style>
 </resources>

@@ -7,26 +7,59 @@ import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.ArrayList;
 
 public class HomePageActivity extends AppCompatActivity {
-
-    CardView cardView;
-    TextView noOfAssest;
+    FloatingActionButton addAssert;
+    TextView noOfAssest,txtmsg;
     SharedPreferences sharedPreferences;
+    BarChart barChart;
+    BarData barData;
+    BarDataSet barDataSet;
+    ArrayList barEntries;
+    private void getEntries(){
+        barEntries = new ArrayList<>();
+        barEntries.add(new BarEntry(1f, 2)); //values to go from  and to
+        barEntries.add(new BarEntry(2f, 4)); //values to go from  and to
+        barEntries.add(new BarEntry(3f, 5)); //values to go from  and to
+        barEntries.add(new BarEntry(5f, 6)); //values to go from  and to
+        barEntries.add(new BarEntry(7f, 2)); //values to go from  and to
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_page);
-        noOfAssest=findViewById(R.id.noOfAssest);
+        setContentView(R.layout.activity_dash_board);
+        barChart = findViewById(R.id.barChart);
+        getEntries();
 
-       sharedPreferences=getSharedPreferences("text",MODE_PRIVATE);
+        barDataSet = new BarDataSet(barEntries, "Data Set");
+        barData = new BarData(barDataSet);
+
+        barChart.setData(barData);
+
+        barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
+        barDataSet.setValueTextColor(Color.BLACK);
+        barDataSet.setValueTextSize(16f);
+
+
+        noOfAssest=findViewById(R.id.noOfAssest);
+        txtmsg=findViewById(R.id.txtmsg);
+        sharedPreferences=getSharedPreferences("text",MODE_PRIVATE);
 
        if(sharedPreferences.getString("serialId","0").equals("0")){
            SharedPreferences.Editor editor=sharedPreferences.edit();
@@ -46,11 +79,17 @@ public class HomePageActivity extends AppCompatActivity {
                startActivity(new Intent(getApplicationContext(),AssetList.class));
            }
        });
+       txtmsg.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               noOfAssest.callOnClick();
+           }
+       });
 
         ActionBar actionBar=getSupportActionBar();
         actionBar.setTitle("Dashboard");
-        cardView = findViewById(R.id.card);
-        cardView.setOnClickListener(new View.OnClickListener() {
+        addAssert = findViewById(R.id.addAssert);
+        addAssert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), ScanCodeActivity.class));

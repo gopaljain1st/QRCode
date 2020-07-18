@@ -1,181 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    android:fillViewport="true"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="3dp"
-    android:padding="20dp"
-    android:id="@+id/order_history_cart"
-    app:cardElevation="5dp"
-    android:elevation="5dp">
-    <LinearLayout
+<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        >
-        <LinearLayout
-            android:padding="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:theme="@style/myTheme.AppBarOverlay">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:gravity="start|top"
+            android:layout_gravity="start"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimaryDark"
+            app:popupTheme="@style/myTheme.PopupOverlay" >
+            <LinearLayout
+                android:layout_marginStart="0dp"
+                android:gravity="end|center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="Assert Data"
+                    android:layout_weight="1.75"
+                    android:gravity="start|center"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    />
+                <ImageView
+                    android:id="@+id/qrCode"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.25"
+                    android:layout_marginEnd="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/qrpng" />
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
 
-            >
-            <TextView
-                android:textColor="#000"
-                android:layout_width="0dp"
-                android:layout_weight="0.6"
-                android:layout_height="wrap_content"
-                android:text=" Id : "
-                android:textSize="17dp"
-                />
-            <TextView
-                android:textColor="#000"
-                android:id="@+id/id"
-                android:layout_width="0dp"
-                android:layout_weight="1.4"
-                android:layout_height="wrap_content"
-                android:text=" 12343565245745 "
-                android:textSize="17dp"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:padding="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2"
-
-            >
-            <TextView
-                android:textColor="#000"
-                android:layout_width="0dp"
-                android:layout_weight="0.6"
-                android:layout_height="wrap_content"
-                android:text="Name : "
-                android:textSize="17dp"
-                />
-            <TextView
-                android:textColor="#000"
-                android:id="@+id/name"
-                android:layout_width="0dp"
-                android:layout_weight="1.4"
-                android:layout_height="wrap_content"
-                android:text=" Chips "
-                android:textSize="17dp"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:padding="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2"
-
-            >
-            <TextView
-                android:textColor="#000"
-                android:layout_width="0dp"
-                android:layout_weight="0.6"
-                android:layout_height="wrap_content"
-                android:text="Barcode Id : "
-                android:textSize="17dp"
-                />
-            <TextView
-                android:textColor="#000"
-                android:id="@+id/type"
-                android:layout_width="0dp"
-                android:layout_weight="1.4"
-                android:layout_height="wrap_content"
-                android:text=" Veg "
-                android:textSize="17dp"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:padding="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2"
-
-            >
-            <TextView
-                android:textColor="#000"
-                android:layout_width="0dp"
-                android:layout_weight="0.6"
-                android:layout_height="wrap_content"
-                android:text="Product : "
-                android:textSize="17dp"
-                />
-            <TextView
-                android:textColor="#000"
-                android:id="@+id/price"
-                android:layout_width="0dp"
-                android:layout_weight="1.4"
-                android:layout_height="wrap_content"
-                android:text=" \u20B9 120/-"
-                android:textSize="17dp"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:padding="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2"
-
-            >
-            <TextView
-                android:textColor="#000"
-                android:layout_width="0dp"
-                android:layout_weight="0.6"
-                android:layout_height="wrap_content"
-                android:text="Product Type:"
-                android:textSize="17dp"
-                />
-            <TextView
-                android:textColor="#000"
-                android:id="@+id/productType"
-                android:layout_width="0dp"
-                android:layout_weight="1.4"
-                android:layout_height="wrap_content"
-                android:text="productType"
-                android:textSize="17dp"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:padding="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2"
-
-            >
-            <TextView
-                android:textColor="#000"
-                android:layout_width="0dp"
-                android:layout_weight="0.6"
-                android:layout_height="wrap_content"
-                android:text="Asset State: "
-                android:textSize="17dp"
-                />
-            <TextView
-                android:textColor="#000"
-                android:id="@+id/assetState"
-                android:layout_width="0dp"
-                android:layout_weight="1.4"
-                android:layout_height="wrap_content"
-                android:text=" assetState"
-                android:textSize="17dp"
-                />
-        </LinearLayout><LinearLayout
+    <ScrollView android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <LinearLayout
         android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -188,170 +71,325 @@
             android:layout_width="0dp"
             android:layout_weight="0.6"
             android:layout_height="wrap_content"
-            android:text="Vendor : "
+            android:text=" Id : "
             android:textSize="17dp"
             />
         <TextView
             android:textColor="#000"
-            android:id="@+id/vendor"
+            android:id="@+id/id"
             android:layout_width="0dp"
             android:layout_weight="1.4"
             android:layout_height="wrap_content"
-            android:text=" vendor"
-            android:textSize="17dp"
-            />
-    </LinearLayout><LinearLayout
-        android:padding="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2"
-
-        >
-        <TextView
-            android:textColor="#000"
-            android:layout_width="0dp"
-            android:layout_weight="0.6"
-            android:layout_height="wrap_content"
-            android:text="Asset Type: "
-            android:textSize="17dp"
-            />
-        <TextView
-            android:textColor="#000"
-            android:id="@+id/assetType"
-            android:layout_width="0dp"
-            android:layout_weight="1.4"
-            android:layout_height="wrap_content"
-            android:text=" assetType"
-            android:textSize="17dp"
-            />
-    </LinearLayout><LinearLayout
-        android:padding="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2"
-
-        >
-        <TextView
-            android:textColor="#000"
-            android:layout_width="0dp"
-            android:layout_weight="0.6"
-            android:layout_height="wrap_content"
-            android:text="Asset Category: "
-            android:textSize="17dp"
-            />
-        <TextView
-            android:textColor="#000"
-            android:id="@+id/assetCategory"
-            android:layout_width="0dp"
-            android:layout_weight="1.4"
-            android:layout_height="wrap_content"
-            android:text=" assetCategory"
-            android:textSize="17dp"
-            />
-    </LinearLayout><LinearLayout
-        android:padding="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2"
-
-        >
-        <TextView
-            android:textColor="#000"
-            android:layout_width="0dp"
-            android:layout_weight="0.6"
-            android:layout_height="wrap_content"
-            android:text="Assocutation Gate: "
-            android:textSize="17dp"
-            />
-        <TextView
-            android:textColor="#000"
-            android:id="@+id/assocutationGate"
-            android:layout_width="0dp"
-            android:layout_weight="1.4"
-            android:layout_height="wrap_content"
-            android:text=" assocutationGate"
-            android:textSize="17dp"
-            />
-    </LinearLayout><LinearLayout
-        android:padding="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2"
-
-        >
-        <TextView
-            android:textColor="#000"
-            android:layout_width="0dp"
-            android:layout_weight="0.6"
-            android:layout_height="wrap_content"
-            android:text="Expiry Date: "
-            android:textSize="17dp"
-            />
-        <TextView
-            android:textColor="#000"
-            android:id="@+id/expiryDate"
-            android:layout_width="0dp"
-            android:layout_weight="1.4"
-            android:layout_height="wrap_content"
-            android:text=" expiryDate"
-            android:textSize="17dp"
-            />
-    </LinearLayout><LinearLayout
-        android:padding="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2"
-
-        >
-        <TextView
-            android:textColor="#000"
-            android:layout_width="0dp"
-            android:layout_weight="0.6"
-            android:layout_height="wrap_content"
-            android:text="Serior No: "
-            android:textSize="17dp"
-            />
-        <TextView
-            android:textColor="#000"
-            android:id="@+id/seriorNo"
-            android:layout_width="0dp"
-            android:layout_weight="1.4"
-            android:layout_height="wrap_content"
-            android:text=" seriorNo"
-            android:textSize="17dp"
-            />
-    </LinearLayout><LinearLayout
-        android:padding="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2"
-
-        >
-        <TextView
-            android:textColor="#000"
-            android:layout_width="0dp"
-            android:layout_weight="0.6"
-            android:layout_height="wrap_content"
-            android:text="Region: "
-            android:textSize="17dp"
-            />
-        <TextView
-            android:textColor="#000"
-            android:id="@+id/region"
-            android:layout_width="0dp"
-            android:layout_weight="1.4"
-            android:layout_height="wrap_content"
-            android:text=" region"
+            android:text=" 12343565245745 "
             android:textSize="17dp"
             />
     </LinearLayout>
-        <LinearLayout
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+
+        >
+        <TextView
+            android:textColor="#000"
+            android:layout_width="0dp"
+            android:layout_weight="0.6"
+            android:layout_height="wrap_content"
+            android:text="Name : "
+            android:textSize="17dp"
+            />
+        <TextView
+            android:textColor="#000"
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_weight="1.4"
+            android:layout_height="wrap_content"
+            android:text=" Chips "
+            android:textSize="17dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+
+        >
+        <TextView
+            android:textColor="#000"
+            android:layout_width="0dp"
+            android:layout_weight="0.6"
+            android:layout_height="wrap_content"
+            android:text="Barcode Id : "
+            android:textSize="17dp"
+            />
+        <TextView
+            android:textColor="#000"
+            android:id="@+id/type"
+            android:layout_width="0dp"
+            android:layout_weight="1.4"
+            android:layout_height="wrap_content"
+            android:text=" Veg "
+            android:textSize="17dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+
+        >
+        <TextView
+            android:textColor="#000"
+            android:layout_width="0dp"
+            android:layout_weight="0.6"
+            android:layout_height="wrap_content"
+            android:text="Product : "
+            android:textSize="17dp"
+            />
+        <TextView
+            android:textColor="#000"
+            android:id="@+id/price"
+            android:layout_width="0dp"
+            android:layout_weight="1.4"
+            android:layout_height="wrap_content"
+            android:text=" \u20B9 120/-"
+            android:textSize="17dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+
+        >
+        <TextView
+            android:textColor="#000"
+            android:layout_width="0dp"
+            android:layout_weight="0.6"
+            android:layout_height="wrap_content"
+            android:text="Product Type:"
+            android:textSize="17dp"
+            />
+        <TextView
+            android:textColor="#000"
+            android:id="@+id/productType"
+            android:layout_width="0dp"
+            android:layout_weight="1.4"
+            android:layout_height="wrap_content"
+            android:text="productType"
+            android:textSize="17dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+
+        >
+        <TextView
+            android:textColor="#000"
+            android:layout_width="0dp"
+            android:layout_weight="0.6"
+            android:layout_height="wrap_content"
+            android:text="Asset State: "
+            android:textSize="17dp"
+            />
+        <TextView
+            android:textColor="#000"
+            android:id="@+id/assetState"
+            android:layout_width="0dp"
+            android:layout_weight="1.4"
+            android:layout_height="wrap_content"
+            android:text=" assetState"
+            android:textSize="17dp"
+            />
+    </LinearLayout><LinearLayout
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="2"
+
+    >
+    <TextView
+        android:textColor="#000"
+        android:layout_width="0dp"
+        android:layout_weight="0.6"
+        android:layout_height="wrap_content"
+        android:text="Vendor : "
+        android:textSize="17dp"
+        />
+    <TextView
+        android:textColor="#000"
+        android:id="@+id/vendor"
+        android:layout_width="0dp"
+        android:layout_weight="1.4"
+        android:layout_height="wrap_content"
+        android:text=" vendor"
+        android:textSize="17dp"
+        />
+</LinearLayout><LinearLayout
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="2"
+
+    >
+    <TextView
+        android:textColor="#000"
+        android:layout_width="0dp"
+        android:layout_weight="0.6"
+        android:layout_height="wrap_content"
+        android:text="Asset Type: "
+        android:textSize="17dp"
+        />
+    <TextView
+        android:textColor="#000"
+        android:id="@+id/assetType"
+        android:layout_width="0dp"
+        android:layout_weight="1.4"
+        android:layout_height="wrap_content"
+        android:text=" assetType"
+        android:textSize="17dp"
+        />
+</LinearLayout><LinearLayout
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="2"
+
+    >
+    <TextView
+        android:textColor="#000"
+        android:layout_width="0dp"
+        android:layout_weight="0.6"
+        android:layout_height="wrap_content"
+        android:text="Asset Category: "
+        android:textSize="17dp"
+        />
+    <TextView
+        android:textColor="#000"
+        android:id="@+id/assetCategory"
+        android:layout_width="0dp"
+        android:layout_weight="1.4"
+        android:layout_height="wrap_content"
+        android:text=" assetCategory"
+        android:textSize="17dp"
+        />
+</LinearLayout><LinearLayout
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="2"
+
+    >
+    <TextView
+        android:textColor="#000"
+        android:layout_width="0dp"
+        android:layout_weight="0.6"
+        android:layout_height="wrap_content"
+        android:text="Assocutation Gate: "
+        android:textSize="17dp"
+        />
+    <TextView
+        android:textColor="#000"
+        android:id="@+id/assocutationGate"
+        android:layout_width="0dp"
+        android:layout_weight="1.4"
+        android:layout_height="wrap_content"
+        android:text=" assocutationGate"
+        android:textSize="17dp"
+        />
+</LinearLayout><LinearLayout
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="2"
+
+    >
+    <TextView
+        android:textColor="#000"
+        android:layout_width="0dp"
+        android:layout_weight="0.6"
+        android:layout_height="wrap_content"
+        android:text="Expiry Date: "
+        android:textSize="17dp"
+        />
+    <TextView
+        android:textColor="#000"
+        android:id="@+id/expiryDate"
+        android:layout_width="0dp"
+        android:layout_weight="1.4"
+        android:layout_height="wrap_content"
+        android:text=" expiryDate"
+        android:textSize="17dp"
+        />
+</LinearLayout><LinearLayout
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="2"
+
+    >
+    <TextView
+        android:textColor="#000"
+        android:layout_width="0dp"
+        android:layout_weight="0.6"
+        android:layout_height="wrap_content"
+        android:text="Serior No: "
+        android:textSize="17dp"
+        />
+    <TextView
+        android:textColor="#000"
+        android:id="@+id/seriorNo"
+        android:layout_width="0dp"
+        android:layout_weight="1.4"
+        android:layout_height="wrap_content"
+        android:text=" seriorNo"
+        android:textSize="17dp"
+        />
+</LinearLayout><LinearLayout
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="2"
+
+    >
+    <TextView
+        android:textColor="#000"
+        android:layout_width="0dp"
+        android:layout_weight="0.6"
+        android:layout_height="wrap_content"
+        android:text="Region: "
+        android:textSize="17dp"
+        />
+    <TextView
+        android:textColor="#000"
+        android:id="@+id/region"
+        android:layout_width="0dp"
+        android:layout_weight="1.4"
+        android:layout_height="wrap_content"
+        android:text=" region"
+        android:textSize="17dp"
+        />
+</LinearLayout>
+    <LinearLayout
         android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -377,84 +415,84 @@
             android:textSize="17dp"
             />
     </LinearLayout>
-        <LinearLayout
-            android:padding="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2"
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
 
-            >
-            <TextView
-                android:textColor="#000"
-                android:layout_width="0dp"
-                android:layout_weight="0.6"
-                android:layout_height="wrap_content"
-                android:text="Location: "
-                android:textSize="17dp"
-                />
-            <TextView
-                android:textColor="#000"
-                android:id="@+id/location"
-                android:layout_width="0dp"
-                android:layout_weight="1.4"
-                android:layout_height="wrap_content"
-                android:text=" location"
-                android:textSize="17dp"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:padding="10dp"
-            android:layout_width="match_parent"
+        >
+        <TextView
+            android:textColor="#000"
+            android:layout_width="0dp"
+            android:layout_weight="0.6"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2"
-
-            >
-            <TextView
-                android:textColor="#000"
-                android:layout_width="0dp"
-                android:layout_weight="0.6"
-                android:layout_height="wrap_content"
-                android:text="Department: "
-                android:textSize="17dp"
-                />
-            <TextView
-                android:textColor="#000"
-                android:id="@+id/department"
-                android:layout_width="0dp"
-                android:layout_weight="1.4"
-                android:layout_height="wrap_content"
-                android:text=" department"
-                android:textSize="17dp"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:padding="10dp"
-            android:layout_width="match_parent"
+            android:text="Location: "
+            android:textSize="17dp"
+            />
+        <TextView
+            android:textColor="#000"
+            android:id="@+id/location"
+            android:layout_width="0dp"
+            android:layout_weight="1.4"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2"
-
-            >
-            <TextView
-                android:textColor="#000"
-                android:layout_width="0dp"
-                android:layout_weight="0.6"
-                android:layout_height="wrap_content"
-                android:text="Managed By: "
-                android:textSize="17dp"
-                />
-            <TextView
-                android:textColor="#000"
-                android:id="@+id/managedBy"
-                android:layout_width="0dp"
-                android:layout_weight="1.4"
-                android:layout_height="wrap_content"
-                android:text=" managedBy"
-                android:textSize="17dp"
-                />
-        </LinearLayout>
+            android:text=" location"
+            android:textSize="17dp"
+            />
     </LinearLayout>
-</androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+
+        >
+        <TextView
+            android:textColor="#000"
+            android:layout_width="0dp"
+            android:layout_weight="0.6"
+            android:layout_height="wrap_content"
+            android:text="Department: "
+            android:textSize="17dp"
+            />
+        <TextView
+            android:textColor="#000"
+            android:id="@+id/department"
+            android:layout_width="0dp"
+            android:layout_weight="1.4"
+            android:layout_height="wrap_content"
+            android:text=" department"
+            android:textSize="17dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+
+        >
+        <TextView
+            android:textColor="#000"
+            android:layout_width="0dp"
+            android:layout_weight="0.6"
+            android:layout_height="wrap_content"
+            android:text="Managed By: "
+            android:textSize="17dp"
+            />
+        <TextView
+            android:textColor="#000"
+            android:id="@+id/managedBy"
+            android:layout_width="0dp"
+            android:layout_weight="1.4"
+            android:layout_height="wrap_content"
+            android:text=" managedBy"
+            android:textSize="17dp"
+            />
+    </LinearLayout>
+</LinearLayout>
 </ScrollView>
+</LinearLayout>
