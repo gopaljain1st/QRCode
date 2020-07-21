@@ -2,17 +2,24 @@ package com.example.cangoproject;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.blikoon.qrcodescanner.QrCodeActivity;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
@@ -32,6 +39,7 @@ public class HomePageActivity extends AppCompatActivity {
     BarData barData;
     BarDataSet barDataSet;
     ArrayList barEntries;
+    private static final int REQUEST_CODE_QR_SCAN = 101;
     private void getEntries(){
         barEntries = new ArrayList<>();
         barEntries.add(new BarEntry(1f, 2)); //values to go from  and to
@@ -79,21 +87,15 @@ public class HomePageActivity extends AppCompatActivity {
                startActivity(new Intent(getApplicationContext(),AssetList.class));
            }
        });
-       txtmsg.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               noOfAssest.callOnClick();
-           }
-       });
+
 
         ActionBar actionBar=getSupportActionBar();
         actionBar.setTitle("Dashboard");
-        addAssert = findViewById(R.id.addAssert);
+        addAssert = findViewById(R.id.addAsset);
         addAssert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), ScanCodeActivity.class));
-                finish();
+                startActivity(new Intent(HomePageActivity.this, TestFlashLight.class));
             }
         });
 
@@ -109,12 +111,10 @@ public class HomePageActivity extends AppCompatActivity {
                    case R.id.assetLst:
                        startActivity(new Intent(getApplicationContext(),AssetList.class));
                        overridePendingTransition(0,0);
-                       finish();
                        return  true;
                    case R.id.setting:
                        startActivity(new Intent(getApplicationContext(),Setting.class));
                        overridePendingTransition(0,0);
-                       finish();
                        return  true;
 
                }
@@ -135,5 +135,60 @@ public class HomePageActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
        super.onBackPressed();
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 0) {
+
+            if (resultCode == RESULT_OK) {
+                String contents = data.getStringExtra("SCAN_RESULT");
+                Toast.makeText(this, contents, Toast.LENGTH_SHORT).show();
+                Log.d("content",contents);
+            }
+            if(resultCode == RESULT_CANCELED){
+                //handle cancel
+            }
+        }
+        /*if (resultCode != Activity.RESULT_OK) {
+            Log.d("LOGTAG", "COULD NOT GET A GOOD RESULT.");
+            if (data == null)
+                return;
+            //Getting the passed result
+            String result = data.getStringExtra("com.blikoon.qrcodescanner.error_decoding_image");
+            if (result != null) {
+                AlertDialog alertDialog = new AlertDialog.Builder(HomePageActivity.this).create();
+                alertDialog.setTitle("Scan Error");
+                alertDialog.setMessage("QR Code could not be scanned");
+                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which)
+                            {
+                                dialog.dismiss();
+                            }
+                        });
+                alertDialog.show();
+            }
+            return;
+
+        }
+        if (requestCode == REQUEST_CODE_QR_SCAN) {
+            if (data == null)
+                return;
+            //Getting the passed result
+            String result = data.getStringExtra("com.blikoon.qrcodescanner.got_qr_scan_relult");
+            Log.d("LOGTAG", "Have scan result in your app activity :" + result);
+            AlertDialog alertDialog = new AlertDialog.Builder(HomePageActivity.this).create();
+            alertDialog.setTitle("Scan result");
+            alertDialog.setMessage(result);
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+            alertDialog.show();
+        }*/
     }
 }

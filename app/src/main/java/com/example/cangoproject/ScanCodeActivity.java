@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -21,6 +22,9 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        ActionBar actionBar=getSupportActionBar();
+        actionBar.setTitle("Scanner");
         scannerView = new ZXingScannerView(this);
         setContentView(scannerView);
     }
