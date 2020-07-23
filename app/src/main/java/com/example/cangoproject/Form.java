@@ -1,6 +1,6 @@
 package com.example.cangoproject;
 
-import android.app.AlertDialog;
+import android.Manifest;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
@@ -9,7 +9,9 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.database.sqlite.SQLiteDatabase;
+import android.location.Location;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -19,13 +21,23 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.maps.android.SphericalUtil;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -41,6 +53,13 @@ public class Form extends AppCompatActivity
     Button submit;
     Spinner productType,assetState,vendor,assetType;
     String date;
+    TextView latitude,longitude;
+    Location currentLocation;
+    boolean flag=false;
+    private static  final int REQUEST_CODE_LOCATION_PERMISSION = 1;
+    FusedLocationProviderClient fusedLocationProviderClient;
+    String arr[];
+    LatLng qrCodeLocation,curLocation;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,14 +68,20 @@ public class Form extends AppCompatActivity
         Intent in=getIntent();
         String result=in.getStringExtra("result");
         SharedPreferences sp=getSharedPreferences("text",MODE_PRIVATE);
+        fusedLocationProviderClient= LocationServices.getFusedLocationProviderClient(this);
+        fetchLastLocatin();
         seriorNo.setText(sp.getString("serialId","0"));
-        String arr[]=result.split(":|\\\n");
+        arr=result.split(":|\\\n");
         try
         {
               id.setText(arr[1].trim());
               name.setText(arr[3].trim());
               type.setText(arr[5].trim());
               price.setText(arr[7].trim());
+              latitude.setText("Latitude : "+arr[9].trim());
+              longitude.setText("Longitude : "+arr[11].trim());
+              qrCodeLocation=new LatLng(Double.parseDouble(arr[9]),Double.parseDouble(arr[11]));
+
         }
         catch (Exception e)
         {
@@ -64,10 +89,104 @@ public class Form extends AppCompatActivity
         }
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                saveToLocalStorage();
+            public void onClick(View v)
+            {
+                if(!flag)
+                {
+                    androidx.appcompat.app.AlertDialog.Builder dialog = new AlertDialog.Builder(Form.this);
+                    dialog.setTitle("Error");
+                    dialog.setMessage("Please Give Permission To Access Current Location");
+                    dialog.setCancelable(false);
+                    dialog.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which)
+                        {
+                            if(ActivityCompat.checkSelfPermission(Form.this, Manifest.permission.ACCESS_FINE_LOCATION)!= PackageManager.PERMISSION_GRANTED){
+                                ActivityCompat.requestPermissions(Form.this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},REQUEST_CODE_LOCATION_PERMISSION);
+                            }
+                        }
+                    });
+                    dialog.create();
+                    dialog.show();
+                }
+                else
+                {
+
+                    double dis  = SphericalUtil.computeDistanceBetween(qrCodeLocation,curLocation);
+                    if((dis/1000)>2.0)
+                    {
+                        androidx.appcompat.app.AlertDialog.Builder dialog = new AlertDialog.Builder(Form.this);
+                        dialog.setTitle("Sorry");
+                        dialog.setMessage("Your Distance Is "+(dis/1000)+"Km Which is Greater Than 2.0Km");
+                        dialog.setCancelable(false);
+                        dialog.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which)
+                            {
+
+                            }
+                        });
+                        dialog.create();
+                        dialog.show();
+                    }
+                    else
+                    {
+                        saveToLocalStorage();
+                    }
+                }
             }
         });
+    }
+    private void fetchLastLocatin() {
+        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)!= PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},REQUEST_CODE_LOCATION_PERMISSION);
+            return;
+        }
+
+        Task<Location> task=fusedLocationProviderClient.getLastLocation();
+        task.addOnSuccessListener(new OnSuccessListener<Location>() {
+            @Override
+            public void onSuccess(Location location) {
+                if(location!=null){
+                    flag=true;
+                    currentLocation=location;
+                    curLocation=new LatLng(currentLocation.getLatitude(),currentLocation.getLongitude());
+                    //latitude.setText("Latitude : "+currentLocation.getLatitude());
+                    //longitude.setText("Longitude : "+currentLocation.getLongitude());
+                }
+            }
+        });
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode){
+            case REQUEST_CODE_LOCATION_PERMISSION:
+                if(grantResults.length>0 && grantResults[0]==PackageManager.PERMISSION_GRANTED){
+                    flag=true;
+                    fetchLastLocatin();
+                }
+                break;
+        }
+    }
+    private double distance(double lat1, double lon1, double lat2, double lon2) {
+        double theta = lon1 - lon2;
+        double dist = Math.sin(deg2rad(lat1))
+                * Math.sin(deg2rad(lat2))
+                + Math.cos(deg2rad(lat1))
+                * Math.cos(deg2rad(lat2))
+                * Math.cos(deg2rad(theta));
+        dist = Math.acos(dist);
+        dist = rad2deg(dist);
+        dist = dist * 60 * 1.1515;
+        return (dist);
+    }
+
+    private double deg2rad(double deg) {
+        return (deg * Math.PI / 180.0);
+    }
+
+    private double rad2deg(double rad) {
+        return (rad * 180.0 / Math.PI);
     }
     private void saveToLocalStorage()
     {
@@ -132,5 +251,7 @@ public class Form extends AppCompatActivity
         assetType=findViewById(R.id.asset_type);
         vendor=findViewById(R.id.vendor);
         submit=findViewById(R.id.submit);
+        latitude=findViewById(R.id.latitude);
+        longitude=findViewById(R.id.longitude);
     }
 }

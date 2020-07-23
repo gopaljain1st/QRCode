@@ -31,7 +31,7 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:text="Assert Data"
+                    android:text="Asset Data"
                     android:layout_weight="1.75"
                     android:gravity="start|center"
                     android:textSize="20sp"
@@ -298,7 +298,7 @@
         android:textColor="#000"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Assocutation Gate: "
+        android:text="Association Gate: "
         android:textSize="17dp"
         />
     <TextView
@@ -307,7 +307,7 @@
         android:layout_width="0dp"
         android:layout_weight="1.4"
         android:layout_height="wrap_content"
-        android:text=" assocutationGate"
+        android:text=" associationGate"
         android:textSize="17dp"
         />
 </LinearLayout><LinearLayout
@@ -348,7 +348,7 @@
         android:layout_width="0dp"
         android:layout_weight="0.6"
         android:layout_height="wrap_content"
-        android:text="Serior No: "
+        android:text="Serial No: "
         android:textSize="17dp"
         />
     <TextView
@@ -357,7 +357,7 @@
         android:layout_width="0dp"
         android:layout_weight="1.4"
         android:layout_height="wrap_content"
-        android:text=" seriorNo"
+        android:text=" serialNo"
         android:textSize="17dp"
         />
 </LinearLayout><LinearLayout

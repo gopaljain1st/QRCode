@@ -71,6 +71,25 @@
                     android:inputType="phone"
                     android:hint="Product" />
             </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Latitude : Please Allow Permission"
+            android:textColor="#000"
+            android:textSize="17sp"
+            android:padding="10dp"
+            android:id="@+id/latitude"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Longitude : Please Allow Permission"
+            android:textColor="#000"
+            android:textSize="17sp"
+            android:padding="10dp"
+            android:id="@+id/longitude"
+            />
         <Spinner
             android:padding="10dp"
             android:layout_width="match_parent"
@@ -147,7 +166,7 @@
                 android:layout_height="wrap_content"
                 android:padding="15dp"
                 android:inputType="textCapWords"
-                android:hint="Assocutation Gate" />
+                android:hint="Association Gate" />
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -173,7 +192,7 @@
                 android:layout_height="wrap_content"
                 android:padding="15dp"
                 android:inputType="textCapWords"
-                android:hint="Serior No" />
+                android:hint="Serial No" />
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -225,7 +244,7 @@
                 android:layout_height="wrap_content"
                 android:padding="15dp"
                 android:inputType="textCapWords"
-                android:hint="Deparment" />
+                android:hint="Department" />
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"

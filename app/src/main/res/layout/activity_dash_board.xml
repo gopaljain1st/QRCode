@@ -314,7 +314,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Total Asserts"
+                android:text="Total Assets"
                 android:textColor="@color/cardview_dark_background"
                 android:fontFamily="sans-serif-black"
                 android:textSize="18sp"
