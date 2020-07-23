@@ -59,7 +59,7 @@
     android:orientation="vertical"
     >
     <LinearLayout
-        android:padding="10dp"
+   android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -172,8 +172,7 @@
         >
         <TextView
             android:textColor="#000"
-            android:layout_width="0dp"
-            android:layout_weight="0.6"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Product Type:"
             android:textSize="17dp"
@@ -273,8 +272,8 @@
     >
     <TextView
         android:textColor="#000"
-        android:layout_width="0dp"
-        android:layout_weight="0.6"
+        android:layout_width="wrap_content"
+
         android:layout_height="wrap_content"
         android:text="Asset Category: "
         android:textSize="17dp"
@@ -282,8 +281,7 @@
     <TextView
         android:textColor="#000"
         android:id="@+id/assetCategory"
-        android:layout_width="0dp"
-        android:layout_weight="1.4"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=" assetCategory"
         android:textSize="17dp"
@@ -298,8 +296,7 @@
     >
     <TextView
         android:textColor="#000"
-        android:layout_width="0dp"
-        android:layout_weight="0.6"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Assocutation Gate: "
         android:textSize="17dp"
