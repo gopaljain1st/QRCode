@@ -17,7 +17,6 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         ActionBar actionBar=getSupportActionBar();
         actionBar.setTitle("Login");
-
         btnLogin=findViewById(R.id.login);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
