@@ -121,11 +121,10 @@ public class HomePageActivity extends AppCompatActivity {
                        return true;
                    case R.id.assetLst:
                        startActivity(new Intent(getApplicationContext(),AssetList.class));
-                       overridePendingTransition(0,0);
                        return  true;
                    case R.id.setting:
                        startActivity(new Intent(getApplicationContext(),Setting.class));
-                       overridePendingTransition(0,0);
+                       //overridePendingTransition(0,0);
                        return  true;
 
                }

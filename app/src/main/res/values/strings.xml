@@ -24,4 +24,5 @@
     <string name="asset_type_prompt">Select Asset Type</string>
     <string name="asset_state_prompt">Select Asset State</string>
     <string name="vendor_prompt">Select Vendor</string>
+
 </resources>

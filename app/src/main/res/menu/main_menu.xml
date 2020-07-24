@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Dashboard"
+    <item android:title=""
+
         android:id="@+id/dashboard"
-        android:icon="@drawable/ic_dashboard_black_24dp"></item>
+        android:icon="@drawable/ic_outline_home_24"></item>
 
     <item android:icon="@drawable/ic_toc_black_24dp"
-        android:title="Asset List"
+        android:title=""
         android:id="@+id/assetLst"></item>
 
     <item android:id="@+id/setting"
-        android:title="Setting"
-        android:icon="@drawable/ic_settings_black_24dp"></item>
+        android:title=""
+        android:icon="@drawable/ic_outline_settings_24"></item>
 </menu>

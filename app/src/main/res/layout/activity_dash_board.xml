@@ -6,17 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/bottomNav"
         android:layout_gravity="bottom"
+        app:itemIconSize="35dp"
         android:fitsSystemWindows="true"
         app:itemBackground="@color/colorAccent"
         app:itemTextColor="@drawable/selector"
         app:itemIconTint="@drawable/selector"
         android:layout_alignParentBottom="true"
+        app:labelVisibilityMode="unlabeled"
         app:menu="@menu/main_menu"></com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -26,6 +27,7 @@
         android:layout_marginBottom="70dp"
         android:layout_marginRight="20dp"
         android:id="@+id/addAsset"
+        android:tint="@color/white"
         android:src="@drawable/ic_add_black_24dp"
         android:background="@color/colorPrimaryDark"
         />
@@ -64,18 +66,20 @@
                 android:layout_weight="1"
                 android:clickable="true"
                 android:padding="10dp"
-                app:cardBackgroundColor="#FFFFFF"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="20dp">
 
                 <RelativeLayout
+                    android:background="@drawable/cardviewbg1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageView
+                        android:layout_marginLeft="10dp"
                         android:id="@+id/image1"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:tint="#fff"
                         android:layout_centerVertical="true"
                         android:src="@drawable/ic_add_box_black_24dp" />
 
@@ -89,7 +93,7 @@
                         android:layout_toRightOf="@+id/image1"
                         android:fontFamily="sans-serif-black"
                         android:text="0"
-                        android:textColor="@color/cardview_dark_background"
+                        android:textColor="@color/white"
                         android:textSize="30sp" />
 
                     <TextView
@@ -102,8 +106,8 @@
                         android:layout_marginTop="10dp"
                         android:layout_toRightOf="@+id/image1"
                         android:fontFamily="sans-serif-medium"
-                        android:text="Diployed"
-                        android:textColor="@color/cardview_dark_background"
+                        android:text="Deployed"
+                        android:textColor="@color/white"
                         android:textSize="14sp" />
 
                     <ImageView
@@ -113,6 +117,7 @@
                         android:layout_alignParentRight="true"
                         android:layout_toRightOf="@+id/first_packing"
                         android:layout_marginLeft="80dp"
+                        android:tint="#fff"
                         android:src="@drawable/ic_chevron_right_black_24dp"
                         />
                 </RelativeLayout>
@@ -127,11 +132,11 @@
                 android:layout_weight="1"
                 android:clickable="true"
                 android:padding="10dp"
-                app:cardBackgroundColor="#FFFFFF"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="20dp">
 
                 <RelativeLayout
+                    android:background="@drawable/cardviewbg2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -139,6 +144,8 @@
                         android:id="@+id/image2"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:tint="@color/white"
                         android:layout_centerVertical="true"
                         android:src="@drawable/ic_directions_car_black_24dp" />
 
@@ -152,7 +159,7 @@
                         android:layout_toRightOf="@+id/image2"
                         android:fontFamily="sans-serif-black"
                         android:text="0"
-                        android:textColor="@color/cardview_dark_background"
+                        android:textColor="@color/white"
                         android:textSize="30sp" />
 
                     <TextView
@@ -166,11 +173,12 @@
                         android:layout_toRightOf="@+id/image2"
                         android:fontFamily="sans-serif-medium"
                         android:text="Transfer"
-                        android:textColor="@color/cardview_dark_background"
+                        android:textColor="@color/white"
                         android:textSize="14sp" />
 
 
                     <ImageView
+                        android:tint="@color/white"
                         android:layout_width="10dp"
                         android:layout_height="40dp"
                         android:layout_centerInParent="true"
@@ -190,15 +198,17 @@
                 android:layout_weight="1"
                 android:clickable="true"
                 android:padding="10dp"
-                app:cardBackgroundColor="#FFFFFF"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="20dp">
 
                 <RelativeLayout
+                    android:background="@drawable/cardviewbg3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageView
+                        android:tint="@color/white"
+                        android:layout_marginLeft="10dp"
                         android:id="@+id/image3"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
@@ -215,7 +225,7 @@
                         android:layout_toRightOf="@+id/image3"
                         android:fontFamily="sans-serif-black"
                         android:text="0"
-                        android:textColor="@color/cardview_dark_background"
+                        android:textColor="@color/white"
                         android:textSize="30sp" />
 
                     <TextView
@@ -229,11 +239,12 @@
                         android:layout_toRightOf="@+id/image3"
                         android:fontFamily="sans-serif-medium"
                         android:text="Movement"
-                        android:textColor="@color/cardview_dark_background"
+                        android:textColor="@color/white"
                         android:textSize="14sp" />
 
 
                     <ImageView
+                        android:tint="@color/white"
                         android:layout_width="10dp"
                         android:layout_height="40dp"
                         android:layout_centerInParent="true"
@@ -293,11 +304,9 @@
                         android:layout_marginTop="10dp"
                         android:layout_toRightOf="@+id/image4"
                         android:fontFamily="sans-serif-medium"
-                        android:text="Dismental"
+                        android:text="Dismantled"
                         android:textColor="@color/cardview_dark_background"
                         android:textSize="14sp" />
-
-
                     <ImageView
                         android:layout_width="10dp"
                         android:layout_height="40dp"

@@ -79,8 +79,9 @@
 
     <ScrollView
         android:id="@+id/sv"
+        android:layout_centerInParent="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/bgHeader">
 
         <RelativeLayout
@@ -130,6 +131,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
+                        android:password="true"
                         android:layout_marginRight="10dp"
                         android:inputType="textPassword" />
                 </LinearLayout>
