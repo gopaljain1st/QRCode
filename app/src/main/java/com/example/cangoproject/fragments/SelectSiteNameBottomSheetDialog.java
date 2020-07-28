@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,18 +23,26 @@ public class SelectSiteNameBottomSheetDialog extends BottomSheetDialogFragment
 {
     RecyclerView recyclerView;
     ArrayList<SiteName>al;
+    ImageView close;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v=inflater.inflate(R.layout.site_bottom_fragment,container,false);
           recyclerView=v.findViewById(R.id.rv);
+          close=v.findViewById(R.id.close);
+          close.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  dismiss();
+              }
+          });
           recyclerView.setHasFixedSize(true);
           al=new ArrayList<>();
-          al.add(new SiteName(1,"Gopal Jain"));
-          al.add(new SiteName(2,"Sagar Jain"));
-          al.add(new SiteName(3,"Naman Badkul"));
-          al.add(new SiteName(4,"Vikas Jain"));
+          al.add(new SiteName(1,"Adambakkam"));
+          al.add(new SiteName(2,"Madhavaram"));
+          al.add(new SiteName(3,"Mambalam"));
+          al.add(new SiteName(4,"Nungambakkam"));
           recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
           recyclerView.setAdapter(new BottomSheetAdapter(getContext(),al));
           return v;
