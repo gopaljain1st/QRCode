@@ -18,6 +18,12 @@ public class SiteProjectAdapter extends RecyclerView.Adapter<SiteProjectAdapter.
 {
     Context context;
     ArrayList<SiteProjects>al;
+
+    public SiteProjectAdapter(Context context, ArrayList<SiteProjects> al) {
+        this.context = context;
+        this.al = al;
+    }
+
     @NonNull
     @Override
     public SiteProjectAdapterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)

@@ -32,8 +32,9 @@
                     android:orientation="vertical"
                     >
                     <TextView
+                        android:id="@+id/siteName"
                         android:layout_width="wrap_content"
-                        android:layout_height="35dp"
+                        android:layout_height="40dp"
                         android:text="Site Name"
                         android:textColor="#000"
                         android:drawableLeft="@drawable/location"
@@ -88,15 +89,15 @@
             android:text="Asset Tagging"
             android:layout_marginLeft="10dp"
             android:padding="5dp"
+            android:layout_marginTop="10dp"
             android:textSize="17sp"
             android:textColor="#000"
             android:textStyle="bold"
             />
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="300dp"
             android:id="@+id/rv"
-            android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             />
         <TextView
@@ -125,7 +126,7 @@
                 android:padding="10dp"
                 app:cardBackgroundColor="#FFFFFF"
                 app:cardCornerRadius="10dp"
-                app:cardElevation="20dp">
+                app:cardElevation="5dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -168,7 +169,7 @@
                 android:padding="10dp"
                 app:cardBackgroundColor="#FFFFFF"
                 app:cardCornerRadius="10dp"
-                app:cardElevation="20dp">
+                app:cardElevation="5dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"

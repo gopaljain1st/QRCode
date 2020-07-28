@@ -31,6 +31,9 @@
         <activity android:name=".ItemDataActivity"
             android:theme="@style/myTheme.NoActionBar"
             />
+        <activity android:name=".SiteActivity"
+            android:theme="@style/myTheme.NoActionBar"
+            />
         <activity android:name=".LoginActivity"
             android:theme="@style/myTheme.NoActionBar"
             >
