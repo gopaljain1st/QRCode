@@ -2,7 +2,7 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
@@ -32,32 +32,6 @@
                     android:layout_marginTop="9dp"
                     android:src="@drawable/ic_arrow_back_black_24dp"
                     ></ImageView>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="1.7"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    >
-                    <TextView
-                        android:id="@+id/siteName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="40dp"
-                        android:text="Site Name"
-                        android:textColor="#000"
-                        android:drawableLeft="@drawable/location"
-                        android:drawableTint="#000"
-                        android:padding="10dp"
-                        android:drawablePadding="5dp"
-                        />
-                    <TextView
-                        android:id="@+id/selectedLine"
-                        android:visibility="invisible"
-                        android:layout_width="115dp"
-                        android:layout_height="1dp"
-                        android:background="#000"
-                        android:padding="10dp"
-                        />
-                </LinearLayout>
 
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
@@ -71,7 +45,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Domain"
+            android:text="Radio Assets"
             android:layout_marginLeft="15dp"
             android:padding="5dp"
             android:layout_marginTop="10dp"
@@ -81,9 +55,9 @@
             />
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/rv"
-            android:layout_marginBottom="5dp"
+
             />
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -18,12 +18,10 @@ android:layout_height="wrap_content">
     app:cardBackgroundColor="#FFFFFF"
     app:cardCornerRadius="10dp"
     app:cardElevation="5dp">
-
     <RelativeLayout
         android:background="@drawable/border"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <ImageView
             android:id="@+id/image1"
             android:layout_centerVertical="true"
@@ -31,7 +29,6 @@ android:layout_height="wrap_content">
             android:layout_height="40dp"
             android:paddingLeft="8dp"
             android:src="@drawable/ic_add_box_black_24dp" />
-
         <TextView
             android:id="@+id/assetTypeA"
             android:layout_width="wrap_content"
@@ -44,19 +41,16 @@ android:layout_height="wrap_content">
             android:text="Active Assets"
             android:textColor="@color/cardview_dark_background"
             android:textSize="22sp" />
-
         <TextView
             android:layout_width="40dp"
             android:layout_height="40sp"
             android:id="@+id/nooftype"
             android:layout_marginLeft="20dp"
             android:text="120"
-        android:padding="10dp"
+            android:padding="10dp"
             android:layout_marginTop="30dp"
             android:background="@drawable/background"
             android:layout_toRightOf="@+id/assetTypeA"></TextView>
-
-
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
