@@ -13,8 +13,8 @@ android:layout_height="wrap_content">
     android:layout_margin="10dp"
     android:layout_weight="1"
     android:clickable="true"
-    android:id="@+id/card_side"
     android:padding="10dp"
+    android:id="@+id/site_type"
     app:cardBackgroundColor="#FFFFFF"
     app:cardCornerRadius="10dp"
     app:cardElevation="5dp">
@@ -33,35 +33,33 @@ android:layout_height="wrap_content">
             android:src="@drawable/ic_add_box_black_24dp" />
 
         <TextView
-            android:id="@+id/code"
+            android:id="@+id/assetTypeA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="35dp"
             android:layout_toRightOf="@+id/image1"
             android:fontFamily="sans-serif-black"
-            android:text="Project Code 01"
+            android:text="Active Assets"
             android:textColor="@color/cardview_dark_background"
             android:textSize="22sp" />
 
         <TextView
-            android:id="@+id/pendingTagging"
-            android:layout_width="230dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/code"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="18dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/image1"
-            android:fontFamily="sans-serif-medium"
-            android:text="64 Assets Pending Tagging"
-            android:textColor="@color/cardview_dark_background"
-            android:textSize="14sp" />
+            android:layout_width="40dp"
+            android:layout_height="40sp"
+            android:id="@+id/nooftype"
+            android:layout_marginLeft="20dp"
+            android:text="120"
+        android:padding="10dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/background"
+            android:layout_toRightOf="@+id/assetTypeA"></TextView>
+
 
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginRight="10dp"
             android:layout_centerInParent="true"
             android:layout_alignParentRight="true"

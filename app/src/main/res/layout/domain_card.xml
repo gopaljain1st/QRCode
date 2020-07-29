@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:padding="10dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Core"
+                android:id="@+id/domian_name"
+                android:textSize="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                ></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/domain_id"
+                android:layout_marginLeft="15sp"
+                android:textSize="20dp"
+                android:text="Core ID : 20"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_below="@+id/domian_name"
+                android:layout_marginTop="30sp"></TextView>
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:text="100"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                android:textColor="#000"
+                android:layout_marginTop="15sp"
+                android:textAlignment="center"
+                android:background="@drawable/background"
+                android:id="@+id/domain_number"
+                android:paddingTop="10sp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="20dp"
+                ></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Assets"
+                android:textColor="#000"
+                android:layout_alignParentEnd="true"
+                android:textStyle="normal"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="40dp"
+                android:textSize="15sp"
+                android:layout_below="@+id/domain_number"
+                ></TextView>
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+
+                android:layout_alignParentBottom="true"
+                android:background="#ec526576"
+                android:orientation="horizontal"
+                 />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
