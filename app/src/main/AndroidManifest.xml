@@ -55,6 +55,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".TestFlashLight" />
+        <activity android:name=".RadioAsset"
+            />
     </application>
 
 </manifest>

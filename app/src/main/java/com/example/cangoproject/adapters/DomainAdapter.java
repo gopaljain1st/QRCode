@@ -1,15 +1,18 @@
 package com.example.cangoproject.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cangoproject.R;
+import com.example.cangoproject.RadioAsset;
 import com.example.cangoproject.models.Domian;
 import com.example.cangoproject.models.SiteType;
 
@@ -39,6 +42,12 @@ public class DomainAdapter extends RecyclerView.Adapter<DomainAdapter.DomainView
         holder.domain_number.setText(domian.getDomain_number());
         holder.domain_name.setText(domian.getDomain_name());
         holder.domain_id.setText(domian.getDomain_id());
+        holder.card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                context.startActivity(new Intent(context, RadioAsset.class));
+            }
+        });
     }
 
     @Override
@@ -48,11 +57,13 @@ public class DomainAdapter extends RecyclerView.Adapter<DomainAdapter.DomainView
 
     public class DomainViewholder extends RecyclerView.ViewHolder{
         TextView domain_name,domain_id,domain_number;
+        CardView card;
         public DomainViewholder(@NonNull View itemView) {
             super(itemView);
             domain_id=itemView.findViewById(R.id.domain_id);
             domain_name=itemView.findViewById(R.id.domian_name);
             domain_number=itemView.findViewById(R.id.domain_number);
+            card=itemView.findViewById(R.id.card);
         }
     }
 }
