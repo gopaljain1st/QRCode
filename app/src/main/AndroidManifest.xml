@@ -56,6 +56,7 @@
         </activity>
         <activity android:name=".TestFlashLight" />
         <activity android:name=".RadioAsset"
+            android:theme="@style/myTheme.NoActionBar"
             />
     </application>
 

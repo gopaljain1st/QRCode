@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.example.cangoproject.adapters.DomainAdapter;
 import com.example.cangoproject.adapters.RadioAdapter;
@@ -22,7 +24,13 @@ public class RadioAsset extends AppCompatActivity {
         setContentView(R.layout.activity_radio_asset);
         recyclerView=findViewById(R.id.rv);
         al=new ArrayList<>();
-
+        ImageView back=findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         al=new ArrayList<>();
         al.add(new Radio("RBS Cabinet","NE ID : 252555","1.0"));

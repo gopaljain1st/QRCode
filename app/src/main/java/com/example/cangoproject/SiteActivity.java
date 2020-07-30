@@ -50,5 +50,6 @@ public class SiteActivity extends AppCompatActivity
         al.add(new SiteProjects(1,"07","32"));
         al.add(new SiteProjects(1,"08","42"));
         rv.setAdapter(new SiteProjectAdapter(this,al));
+        rv.setNestedScrollingEnabled(false);
     }
 }

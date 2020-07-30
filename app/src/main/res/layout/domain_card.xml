@@ -7,7 +7,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/card"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="110dp"
         android:layout_margin="10dp"
         android:layout_weight="1"
         android:clickable="true"
@@ -15,9 +15,8 @@
         app:cardBackgroundColor="#FFFFFF"
         app:cardCornerRadius="10dp"
         app:cardElevation="5dp">
-
         <RelativeLayout
-
+            android:background="@drawable/border"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -43,7 +42,7 @@
                 android:textColor="#000"
                 android:textStyle="bold"
                 android:layout_below="@+id/domian_name"
-                android:layout_marginTop="30sp"></TextView>
+                android:layout_marginTop="15sp"></TextView>
 
             <TextView
                 android:layout_width="100dp"
@@ -72,21 +71,15 @@
                 android:layout_marginRight="40dp"
                 android:textSize="15sp"
                 android:layout_below="@+id/domain_number"
-                ></TextView>
-
-
+                />
             <LinearLayout
                 android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
-
+                android:layout_height="5dp"
                 android:layout_alignParentBottom="true"
-                android:background="#ec526576"
+                android:background="@drawable/cardviewbg1"
                 android:orientation="horizontal"
                  />
-
         </RelativeLayout>
-
     </androidx.cardview.widget.CardView>
-
 </RelativeLayout>

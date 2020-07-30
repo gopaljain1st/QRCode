@@ -6,7 +6,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="110dp"
         android:layout_margin="10dp"
         android:layout_weight="1"
         android:clickable="true"
@@ -17,7 +17,7 @@
         app:cardElevation="5dp">
 
         <RelativeLayout
-
+            android:background="@drawable/border"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -45,7 +45,7 @@
                 android:textColor="#000"
                 android:textStyle="bold"
                 android:layout_below="@+id/domian_name"
-                android:layout_marginTop="25sp"></TextView>
+                android:layout_marginTop="15sp"></TextView>
 
             <TextView
                 android:layout_width="100dp"
@@ -80,10 +80,9 @@
             <LinearLayout
                 android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
-
+                android:layout_height="5dp"
                 android:layout_alignParentBottom="true"
-                android:background="#ec526576"
+                android:background="@drawable/cardviewbg2"
                 android:orientation="horizontal"
                 />
 
