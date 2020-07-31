@@ -5,6 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,18 +20,19 @@ import com.example.cangoproject.fragments.SearchBottomFragnment;
 import com.example.cangoproject.fragments.SelectSiteNameBottomSheetDialog;
 import com.example.cangoproject.models.AssetModel;
 import com.example.cangoproject.models.Domian;
+import com.example.cangoproject.models.Product;
 
 import java.util.ArrayList;
 
 public class SearchWithAssetList extends AppCompatActivity {
     RecyclerView recyclerView;
-    ArrayList<AssetModel> al;
-    TextView filter,src_asset_type;
+    ArrayList<Product> al;
+    TextView filter,src_asset_type,no;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_with_asset_list);
-
+        no=findViewById(R.id.no);
         ActionBar actionBar=getSupportActionBar();
         actionBar.setTitle("Asset List");
 
@@ -52,12 +57,24 @@ public class SearchWithAssetList extends AppCompatActivity {
         });
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         al=new ArrayList<>();
-        al.add(new AssetModel("RBS Cabinet","2544","1.00",R.drawable.qrcode));
+        DatabaseHelper helper=new DatabaseHelper(this);
+        SQLiteDatabase sqLiteDatabase=helper.getReadableDatabase();
+        Cursor c=sqLiteDatabase.rawQuery("select * from product",null);
+        while(c.moveToNext())
+        {
+            no.setVisibility(View.INVISIBLE);
+            byte[] imgByte = c.getBlob(20);
+            Bitmap image = BitmapFactory.decodeByteArray(imgByte,0,imgByte.length);
+            al.add(new Product(c.getInt(0),c.getString(1),c.getString(2),c.getString(3),c.getString(4),c.getString(5),c.getString(6),c.getString(7),
+                    c.getString(8),c.getString(9),c.getString(10),c.getString(11),c.getString(12),c.getString(13),c.getString(14),c.getString(15),
+                    c.getString(16),c.getString(17),c.getString(18),c.getString(19),image));
+        }
+        /*al.add(new AssetModel("RBS Cabinet","2544","1.00",R.drawable.qrcode));
         al.add(new AssetModel("Radio Unit","24","1.00",R.drawable.qrcode));
         al.add(new AssetModel("BB Unit","2544","1.00",0));
         al.add(new AssetModel("Antenna","25894","1.00",0));
         al.add(new AssetModel("Wireless Component","25894","1.00",R.drawable.qrcode));
-
+*/
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(new AssetAdapter(this,al));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

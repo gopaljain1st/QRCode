@@ -45,6 +45,8 @@ public class RadioAdapter extends RecyclerView.Adapter<RadioAdapter.RadioViewHol
         holder.radio_name.setText(radio.getRadio_name());
         holder.radio_id.setText(radio.getRadio_id());
         hm.put("radioId",radio.getRadio_id());
+        hm.put("radioName",radio.getRadio_name());
+        hm.put("radioUnit",radio.getRadio_unit());
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

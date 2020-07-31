@@ -44,17 +44,17 @@ public class AssetList extends AppCompatActivity {
 
 
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottomNav);
-        bottomNavigationView.setSelectedItemId(R.id.assetLst);
+        bottomNavigationView.setSelectedItemId(R.id.list);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
-                    case R.id.dashboard:
+                    case R.id.site:
                         startActivity(new Intent(getApplicationContext(),HomePageActivity.class));
                         overridePendingTransition(0,0);
                         finish();
-                    case R.id.assetLst:
+                    case R.id.list:
                         return true;
                     case R.id.setting:
                         startActivity(new Intent(getApplicationContext(),Setting.class));

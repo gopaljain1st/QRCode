@@ -2,12 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:title="Site"
-        android:id="@+id/dashboard"
+        android:id="@+id/site"
         android:icon="@drawable/site"></item>
 
     <item android:icon="@drawable/ic_toc_black_24dp"
         android:title="Assets"
-        android:id="@+id/assetLst"></item>
+        android:id="@+id/list"></item>
 
     <item android:id="@+id/search"
         android:title="Search"
