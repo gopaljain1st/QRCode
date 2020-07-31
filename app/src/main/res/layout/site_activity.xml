@@ -47,6 +47,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:text="Site Name"
+                        android:fontFamily="@font/bold"
                         android:textColor="#000"
                         android:drawableLeft="@drawable/location"
                         android:drawableTint="#000"
@@ -105,6 +106,7 @@
                 android:layout_marginLeft="15dp"
                 android:padding="5dp"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/bold"
                 android:textSize="17sp"
                 android:textColor="#000"
                 android:textStyle="bold"
@@ -121,6 +123,7 @@
                 android:text="Tagging Summary"
                 android:layout_marginLeft="10dp"
                 android:padding="5dp"
+                android:fontFamily="@font/bold"
                 android:textSize="17sp"
                 android:textColor="#000"
                 android:textStyle="bold"
@@ -160,6 +163,7 @@
                             android:layout_marginLeft="17dp"
                             android:layout_marginTop="10dp"
                             android:textSize="17sp"
+                            android:fontFamily="@font/bold"
                             android:textColor="#000"
                             />
                         <TextView
@@ -169,7 +173,7 @@
                             android:layout_marginLeft="18dp"
                             android:layout_marginTop="40dp"
                             android:layout_toRightOf="@+id/image5"
-                            android:fontFamily="sans-serif-black"
+                            android:fontFamily="@font/bold"
                             android:text="343"
                             android:textColor="@color/cardview_dark_background"
                             android:textSize="30sp" />
@@ -204,6 +208,7 @@
                             android:layout_marginTop="10dp"
                             android:textSize="17sp"
                             android:textColor="#000"
+                            android:fontFamily="@font/bold"
                             />
                         <TextView
                             android:layout_width="wrap_content"
@@ -211,7 +216,7 @@
                             android:layout_marginLeft="18dp"
                             android:layout_marginTop="40dp"
                             android:layout_toRightOf="@+id/tempView"
-                            android:fontFamily="sans-serif-black"
+                            android:fontFamily="@font/bold"
                             android:text="20"
                             android:textColor="@color/cardview_dark_background"
                             android:textSize="30sp" />

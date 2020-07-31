@@ -23,8 +23,22 @@
         android:roundIcon="@mipmap/qrlogo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DomainActivity"
+        <activity android:name=".OutBox">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SearchWithAssetList">
+        </activity>
+        <activity android:name=".DetailsActivity"></activity>
+        <activity
+            android:name=".FormActivity"
             android:theme="@style/myTheme.NoActionBar"></activity>
+        <activity
+            android:name=".DomainActivity"
+            android:theme="@style/myTheme.NoActionBar" />
         <activity
             android:name=".AssetTypeActivity"
             android:theme="@style/myTheme.NoActionBar" />
@@ -47,17 +61,13 @@
             android:theme="@style/myTheme.NoActionBar" />
         <activity
             android:name=".LoginActivity"
-            android:theme="@style/myTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".TestFlashLight" />
-        <activity android:name=".RadioAsset"
-            android:theme="@style/myTheme.NoActionBar"
-            />
+            android:theme="@style/myTheme.NoActionBar" />
+        <activity
+            android:name=".TestFlashLight"
+            android:parentActivityName=".SiteActivity" />
+        <activity
+            android:name=".RadioAsset"
+            android:theme="@style/myTheme.NoActionBar" />
     </application>
 
 </manifest>
