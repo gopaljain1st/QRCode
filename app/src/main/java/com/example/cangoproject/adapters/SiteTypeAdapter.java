@@ -19,15 +19,18 @@ import com.example.cangoproject.models.SiteProjects;
 import com.example.cangoproject.models.SiteType;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class SiteTypeAdapter extends RecyclerView.Adapter<SiteTypeAdapter.SiteTypeAdapterViewHolder> {
 
     Context context;
     ArrayList<SiteType> al;
+    HashMap<String,String>hm;
 
-    public SiteTypeAdapter(Context context, ArrayList<SiteType> al) {
+    public SiteTypeAdapter(Context context, ArrayList<SiteType> al, HashMap<String,String>hm) {
         this.context = context;
         this.al = al;
+        this.hm=hm;
     }
 
     @NonNull
@@ -39,14 +42,15 @@ public class SiteTypeAdapter extends RecyclerView.Adapter<SiteTypeAdapter.SiteTy
 
     @Override
     public void onBindViewHolder(@NonNull SiteTypeAdapterViewHolder holder, int position) {
-        SiteType siteType=al.get(position);
+        final SiteType siteType=al.get(position);
         holder.assetType.setText(siteType.getAssetType());
         holder.assetNo.setText(siteType.getTypeNumber());
 
         holder.setItemClickListner(new ItemClickListner() {
             @Override
             public void onItemClickListner(View v, int position) {
-                context.startActivity(new Intent(context, DomainActivity.class));
+                hm.put("assetType",siteType.getAssetType());
+                context.startActivity(new Intent(context, DomainActivity.class).putExtra("hm",hm));
             }
         });
 

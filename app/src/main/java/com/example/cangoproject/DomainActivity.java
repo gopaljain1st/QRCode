@@ -14,14 +14,18 @@ import com.example.cangoproject.models.Domian;
 import com.example.cangoproject.models.SiteType;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class DomainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<Domian> al;
+    HashMap<String,String>hm;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_domain);
+        hm=new HashMap<>();
+        hm=(HashMap<String, String>) getIntent().getSerializableExtra("hm");
         ImageView back=findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,7 +43,7 @@ public class DomainActivity extends AppCompatActivity {
         al.add(new Domian("TRM","TRM ID : 28","52"));
         al.add(new Domian("FTTH","FTTH ID : 30","82"));
         recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(new DomainAdapter(this,al));
+        recyclerView.setAdapter(new DomainAdapter(this,al,hm));
 
     }
 }

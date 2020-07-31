@@ -51,13 +51,16 @@ public class SiteActivity extends AppCompatActivity
                 requestPermissions(new String[] {Manifest.permission.CAMERA}, 1);
             }
         }
-        addAssert = findViewById(R.id.addAsset);
+      /*
+      *
+      *   addAssert = findViewById(R.id.addAsset);
         addAssert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SiteActivity.this, TestFlashLight.class));
             }
         });
+        * */
 
         rv=findViewById(R.id.rv);
         rv.setLayoutManager(new LinearLayoutManager(this));

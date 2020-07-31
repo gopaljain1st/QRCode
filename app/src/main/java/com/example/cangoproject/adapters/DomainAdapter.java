@@ -17,15 +17,18 @@ import com.example.cangoproject.models.Domian;
 import com.example.cangoproject.models.SiteType;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class DomainAdapter extends RecyclerView.Adapter<DomainAdapter.DomainViewholder> {
 
     Context context;
     ArrayList<Domian> al;
+    HashMap<String,String>hm;
 
-    public DomainAdapter(Context context, ArrayList<Domian> al) {
+    public DomainAdapter(Context context, ArrayList<Domian> al,HashMap<String,String>hm) {
         this.context = context;
         this.al = al;
+        this.hm=hm;
     }
 
     @NonNull
@@ -38,14 +41,16 @@ public class DomainAdapter extends RecyclerView.Adapter<DomainAdapter.DomainView
     @Override
     public void onBindViewHolder(@NonNull DomainViewholder holder, int position) {
 
-        Domian domian=al.get(position);
+        final Domian domian=al.get(position);
         holder.domain_number.setText(domian.getDomain_number());
         holder.domain_name.setText(domian.getDomain_name());
         holder.domain_id.setText(domian.getDomain_id());
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                context.startActivity(new Intent(context, RadioAsset.class));
+            public void onClick(View v)
+            {
+                hm.put("domainId",domian.getDomain_id());
+                context.startActivity(new Intent(context, RadioAsset.class).putExtra("hm",hm));
             }
         });
     }

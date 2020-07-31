@@ -10,7 +10,7 @@
         android:layout_margin="10dp"
         android:layout_weight="1"
         android:clickable="true"
-        android:id="@+id/card_site"
+        android:id="@+id/card"
         android:padding="10dp"
         app:cardBackgroundColor="#FFFFFF"
         app:cardCornerRadius="10dp"

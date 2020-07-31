@@ -17,15 +17,19 @@ import com.example.cangoproject.R;
 import com.example.cangoproject.models.SiteProjects;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SiteProjectAdapter extends RecyclerView.Adapter<SiteProjectAdapter.SiteProjectAdapterViewHolder>
 {
     Context context;
     ArrayList<SiteProjects>al;
+    HashMap<String,String> hm;
 
     public SiteProjectAdapter(Context context, ArrayList<SiteProjects> al) {
         this.context = context;
         this.al = al;
+        hm=new HashMap<>();
     }
 
     @NonNull
@@ -43,8 +47,11 @@ public class SiteProjectAdapter extends RecyclerView.Adapter<SiteProjectAdapter.
 
       holder.setItemClickListner(new ItemClickListner() {
           @Override
-          public void onItemClickListner(View v, int position) {
+          public void onItemClickListner(View v, int position)
+          {
               Intent intent=new Intent(context, AssetTypeActivity.class);
+              hm.put("projectCode",al.get(position).getCode());
+              intent.putExtra("hm",hm);
               context.startActivity(intent);
           }
       });
