@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchWithAssetList">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        android:background="@drawable/border"
+        android:layout_height="50dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/border"
+            android:layout_height="match_parent">
+            <androidx.appcompat.widget.SearchView
+                android:layout_width="match_parent"
+                android:layout_marginTop="7dp"
+                android:layout_height="40dp"></androidx.appcompat.widget.SearchView>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="60dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="30sp"
+            android:padding="5sp"
+            android:paddingLeft="10dp"
+            android:id="@+id/filter"
+
+            android:layout_marginTop="15sp"
+            android:layout_marginLeft="20dp"
+            android:textColor="#000"
+            android:fontFamily="@font/roboto"
+            android:background="@drawable/background"
+            android:drawableLeft="@drawable/ic_filter_list_black_24dp"
+            android:text="Filter"
+            ></TextView>
+
+
+        <TextView
+            android:layout_width="110dp"
+            android:layout_height="30sp"
+            android:padding="5sp"
+            android:id="@+id/src_asset_type"
+            android:layout_marginTop="15sp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000"
+            android:fontFamily="@font/roboto"
+            android:background="@drawable/background"
+            android:drawableRight="@drawable/ic_add_black_24dp"
+            android:text="Asset Type"
+            ></TextView>
+
+
+        <TextView
+            android:layout_width="110dp"
+            android:layout_height="30sp"
+            android:padding="5sp"
+            android:layout_marginTop="15sp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/src_asset_state"
+            android:textColor="#000"
+            android:fontFamily="@font/roboto"
+            android:background="@drawable/background"
+            android:drawableRight="@drawable/ic_add_black_24dp"
+            android:text="Asset State"
+            ></TextView>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:id="@+id/recycle_asset"
+        android:layout_marginTop="110dp"
+        ></androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>

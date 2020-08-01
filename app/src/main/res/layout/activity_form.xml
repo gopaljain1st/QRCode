@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FormActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/app"
+        android:background="@color/colorPrimaryDark"
+        android:theme="@style/myTheme.AppBarOverlay">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:gravity="start|top"
+            android:layout_gravity="start"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimaryDark"
+            app:popupTheme="@style/myTheme.PopupOverlay" >
+            <LinearLayout
+                android:layout_marginStart="0dp"
+                android:gravity="end|center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                >
+
+                <ImageView
+                    android:id="@+id/back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_back_black_24dp"
+                    ></ImageView>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="Asset Data"
+                    android:layout_weight="1.75"
+                    android:gravity="start|center"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="7dp"
+                    android:textColor="@color/white"
+                    />
+                <ImageView
+                    android:id="@+id/qrCode"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.25"
+                    android:layout_marginEnd="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_check_circle_black_24dp" />
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#000"
+        android:id="@+id/rel"
+        android:layout_below="@id/app"
+        android:layout_height="250dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Transaction Id : "
+            android:textColor="#FFF"
+            android:textSize="17dp"
+            android:fontFamily="@font/roboto"
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="22dp"
+            android:id="@+id/txtTran"></TextView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12574848"
+            android:textColor="#FFF"
+            android:fontFamily="@font/roboto"
+            android:textSize="17dp"
+            android:layout_marginTop="17dp"
+            android:layout_toRightOf="@+id/txtTran"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/txtUseTrans"></TextView>
+
+
+        <TextView
+            android:id="@+id/txtSerial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtTran"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="17dp"
+            android:fontFamily="@font/roboto"
+            android:text="Serial Number : "
+            android:textColor="#FFF"
+            android:textSize="17dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12574848"
+            android:textColor="#FFF"
+            android:fontFamily="@font/roboto"
+            android:textSize="17dp"
+            android:layout_marginTop="17dp"
+            android:layout_below="@+id/txtUseTrans"
+            android:layout_toRightOf="@+id/txtSerial"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/txtUseSerial"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantity : "
+            android:textColor="#FFF"
+            android:textSize="17dp"
+            android:layout_below="@+id/txtSerial"
+            android:fontFamily="@font/roboto"
+
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="22dp"
+            android:id="@+id/txtQty"></TextView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.00"
+            android:textColor="#FFF"
+            android:layout_below="@+id/txtUseSerial"
+            android:fontFamily="@font/roboto"
+
+            android:textSize="17dp"
+            android:layout_marginTop="17dp"
+            android:layout_toRightOf="@+id/txtTran"
+            android:layout_marginLeft="21dp"
+            android:id="@+id/txtUseQty"></TextView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Asset ID  : "
+            android:textColor="#FFF"
+            android:textSize="17dp"
+            android:layout_below="@+id/txtQty"
+            android:fontFamily="@font/roboto"
+
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="22dp"
+            android:id="@+id/txtAssetId"></TextView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="70254862-HDI"
+            android:textColor="#FFF"
+            android:layout_below="@+id/txtUseQty"
+            android:fontFamily="@font/roboto"
+
+            android:textSize="17dp"
+            android:layout_marginTop="17dp"
+            android:layout_toRightOf="@+id/txtTran"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/txtUseAssetId"></TextView>
+
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tower ID  : "
+            android:textColor="#FFF"
+            android:textSize="17dp"
+            android:layout_below="@+id/txtAssetId"
+            android:fontFamily="@font/roboto"
+
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="22dp"
+            android:id="@+id/txtTowerId"></TextView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="70254862-HDIGSN-18"
+            android:textColor="#FFF"
+            android:layout_below="@+id/txtUseAssetId"
+            android:fontFamily="@font/roboto"
+
+            android:textSize="17dp"
+            android:layout_marginTop="17dp"
+            android:layout_toRightOf="@+id/txtTran"
+            android:layout_marginLeft="17dp"
+            android:id="@+id/txtUseTowerId"></TextView>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Radio Unit ID : "
+            android:textColor="#FFF"
+            android:textSize="17dp"
+            android:layout_below="@+id/txtTowerId"
+            android:fontFamily="@font/roboto"
+
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="22dp"
+            android:id="@+id/txtRadioUnitId"></TextView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7025486HDIG18"
+            android:textColor="#FFF"
+            android:layout_below="@+id/txtUseTowerId"
+            android:fontFamily="@font/roboto"
+
+            android:textSize="17dp"
+            android:layout_marginTop="17dp"
+            android:layout_toRightOf="@+id/txtTran"
+            android:layout_marginLeft="17dp"
+            android:id="@+id/txtUseRadioUnitId"></TextView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@id/rel"
+        android:layout_marginTop="15sp"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/cabinet"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="8dp">
+            <EditText
+                android:id="@+id/cabinetid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:fontFamily="@font/roboto"
+
+                android:inputType="text"
+                android:hint="Cabinet Id" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/radiounit"
+            android:layout_below="@+id/cabinet"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="8dp">
+            <EditText
+                android:id="@+id/radio_unit_band"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+
+                android:padding="15dp"
+                android:inputType="text"
+                android:hint="Radio Unit Band" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/radioplace"
+            android:layout_below="@+id/radiounit"
+            android:layout_marginBottom="8dp">
+            <EditText
+                android:id="@+id/radio_unit_placement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:fontFamily="@font/roboto"
+
+                android:inputType="text"
+                android:hint="Radio Unit Placement" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/radioplace"
+            android:layout_marginRight="10dp"
+            android:id="@+id/radiotype"
+            android:layout_marginBottom="8dp">
+            <EditText
+                android:id="@+id/radio_unit_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:inputType="text"
+                android:fontFamily="@font/roboto"
+
+                android:hint="Radio Unit Type" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/sta"
+            android:layout_below="@+id/radiotype"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="8dp">
+            <EditText
+                android:id="@+id/status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:inputType="text"
+                android:fontFamily="@font/roboto"
+
+                android:hint="Status" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/accpe"
+            android:layout_below="@+id/sta"
+            android:layout_marginBottom="8dp">
+            <EditText
+                android:id="@+id/acceptance_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:fontFamily="@font/roboto"
+
+                android:inputType="text"
+                android:hint="Acceptance Date" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/accpe"
+            android:id="@+id/integratino"
+            android:layout_marginBottom="8dp">
+            <EditText
+                android:id="@+id/integration_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+
+                android:padding="15dp"
+                android:inputType="text"
+                android:hint="Integration Date" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginLeft="22dp"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:fontFamily="@font/roboto"
+
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/integratino"
+            android:layout_marginBottom="8dp"
+            android:text="Evidence"
+            android:layout_marginTop="10dp"
+
+            android:layout_height="40dp"
+            ></TextView>
+    </RelativeLayout>
+</RelativeLayout>
+</ScrollView>

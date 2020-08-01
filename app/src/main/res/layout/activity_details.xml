@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".FormActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="#000"
+            android:id="@+id/rel"
+
+            android:layout_height="160dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Transaction Id : "
+                android:textColor="#FFF"
+                android:textSize="17dp"
+                android:fontFamily="@font/bold"
+                android:layout_marginTop="17dp"
+                android:layout_marginLeft="22dp"
+                android:id="@+id/txtTran"></TextView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12574848"
+                android:textColor="#FFF"
+                android:fontFamily="@font/bold"
+                android:textSize="17dp"
+                android:layout_marginTop="17dp"
+                android:layout_toRightOf="@+id/txtTran"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/txtUseTrans"></TextView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Serial Number : "
+                android:textColor="#FFF"
+                android:textSize="17dp"
+                android:fontFamily="@font/bold"
+                android:layout_marginTop="17dp"
+                android:layout_marginLeft="22dp"
+                android:layout_below="@+id/txtTran"
+                android:id="@+id/txtSerial"></TextView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12"
+                android:textColor="#FFF"
+                android:fontFamily="@font/bold"
+                android:textSize="17dp"
+                android:layout_marginTop="17dp"
+                android:layout_below="@+id/txtUseTrans"
+                android:layout_toRightOf="@+id/txtSerial"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/txtUseSerial"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quantity : "
+                android:textColor="#FFF"
+                android:textSize="17dp"
+                android:layout_below="@+id/txtSerial"
+                android:fontFamily="@font/bold"
+                android:layout_marginTop="17dp"
+                android:layout_marginLeft="22dp"
+                android:id="@+id/txtQty"></TextView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1.00"
+                android:textColor="#FFF"
+                android:layout_below="@+id/txtUseSerial"
+                android:fontFamily="@font/bold"
+                android:textSize="17dp"
+                android:layout_marginTop="17dp"
+                android:layout_toRightOf="@+id/txtTran"
+                android:layout_marginLeft="21dp"
+                android:id="@+id/txtUseQty"></TextView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ASSET TRACKED"
+                android:textColor="#FFF"
+                android:layout_marginLeft="60dp"
+                android:id="@+id/asset"
+                android:fontFamily="@font/bold"
+                android:layout_below="@+id/txtTran"
+                android:layout_toRightOf="@+id/txtUseQty"></TextView>
+
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_below="@+id/asset"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="-211dp"
+                android:layout_toStartOf="@+id/txtUseQty"
+                android:src="@drawable/qrcode"></ImageView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_below="@+id/rel"
+            android:layout_height="match_parent">
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#5782B1FF">
+            </com.google.android.material.tabs.TabLayout>
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_below="@+id/tabLayout"
+                app:layout_constraintTop_toBottomOf="@+id/tabLayout"
+                tools:layout_editor_absoluteX="8dp" />
+        </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
+</ScrollView>

@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:layout_margin="13dp"
+        android:background="@drawable/background"
+        android:clickable="true"
+        android:padding="10dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tower ID     : "
+                android:id="@+id/td"
+                android:textColor="#000"
+                android:textSize="14dp"
+                android:fontFamily="@font/bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15sp"
+                ></TextView>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="125874"
+                android:id="@+id/txtTdID"
+                android:textColor="#000"
+                android:layout_toRightOf="@id/td"
+                android:textSize="14dp"
+                android:fontFamily="@font/bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15sp"
+                ></TextView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Asset ID      : "
+                android:id="@+id/ass"
+                android:textColor="#000"
+                android:textSize="14dp"
+                android:layout_below="@+id/td"
+                android:fontFamily="@font/bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15sp"
+                ></TextView>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="H5845"
+                android:id="@+id/txtAssID"
+                android:textColor="#000"
+                android:layout_below="@+id/txtTdID"
+                android:layout_toRightOf="@id/ass"
+                android:textSize="14dp"
+                android:fontFamily="@font/bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15sp"
+                ></TextView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cabinet ID  : "
+                android:id="@+id/cab"
+                android:textColor="#000"
+                android:textSize="14dp"
+                android:layout_below="@+id/ass"
+                android:fontFamily="@font/bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15sp"
+                ></TextView>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5892"
+                android:id="@+id/txtCabID"
+                android:textColor="#000"
+                android:layout_below="@+id/txtAssID"
+                android:layout_toRightOf="@id/cab"
+                android:textSize="14dp"
+                android:fontFamily="@font/bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15sp"
+                ></TextView>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card1"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_margin="13dp"
+        android:background="@drawable/background"
+        android:clickable="true"
+        android:padding="10dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Radio Unit ID  : "
+                android:id="@+id/ru"
+                android:textColor="#000"
+                android:textSize="14dp"
+                android:fontFamily="@font/bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15sp"
+                ></TextView>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="HSP-481GF"
+                android:id="@+id/txtRUID"
+                android:textColor="#000"
+                android:layout_toRightOf="@id/ru"
+                android:textSize="14dp"
+                android:fontFamily="@font/bold"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="15sp"
+                ></TextView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Radio Unit Band : "
+                android:id="@+id/rub"
+                android:textColor="#000"
+                android:textSize="14dp"
+                android:layout_below="@+id/ru"
+                android:fontFamily="@font/bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15sp"
+                ></TextView>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="FF555"
+                android:id="@+id/txtRUBID"
+                android:textColor="#000"
+                android:layout_below="@+id/txtRUID"
+                android:layout_toRightOf="@id/rub"
+                android:textSize="14dp"
+                android:fontFamily="@font/bold"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15sp"
+                ></TextView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Radio Unit Placement  : "
+                android:id="@+id/rup"
+                android:textColor="#000"
+                android:textSize="14dp"
+                android:layout_below="@+id/rub"
+                android:fontFamily="@font/bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15sp"
+                ></TextView>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="55555"
+                android:id="@+id/txtRUPID"
+                android:textColor="#000"
+                android:layout_below="@+id/txtRUBID"
+                android:layout_toRightOf="@id/rup"
+                android:textSize="14dp"
+                android:fontFamily="@font/bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15sp"
+                ></TextView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Radio Unit Type : "
+                android:id="@+id/rut"
+                android:textColor="#000"
+                android:textSize="14dp"
+                android:layout_below="@+id/rup"
+                android:fontFamily="@font/bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15sp"
+                ></TextView>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="FF5cd"
+                android:id="@+id/txtRUTID"
+                android:textColor="#000"
+                android:layout_below="@+id/txtRUPID"
+                android:layout_toRightOf="@id/rut"
+                android:textSize="14dp"
+                android:fontFamily="@font/bold"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="15sp"
+                ></TextView>
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card2"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:layout_margin="13dp"
+        android:background="@drawable/background"
+        android:clickable="true"
+        android:padding="10dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status                    : "
+                android:id="@+id/st"
+                android:textColor="#000"
+                android:textSize="14dp"
+                android:fontFamily="@font/bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15sp"
+                ></TextView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Active"
+                android:id="@+id/txtStatus"
+                android:textColor="#000"
+                android:layout_toRightOf="@id/st"
+                android:textSize="14dp"
+                android:fontFamily="@font/bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15sp"
+                ></TextView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Acceptance Date  : "
+                android:id="@+id/actd"
+                android:textColor="#000"
+                android:textSize="14dp"
+                android:layout_below="@+id/st"
+                android:fontFamily="@font/bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15sp"
+                ></TextView>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="12/07/2020"
+                android:id="@+id/txtAcceptDate"
+                android:textColor="#000"
+                android:layout_below="@+id/txtStatus"
+                android:layout_toRightOf="@id/actd"
+                android:textSize="14dp"
+                android:fontFamily="@font/bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15sp"
+                ></TextView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Integration Date   : "
+                android:id="@+id/intd"
+                android:textColor="#000"
+                android:textSize="14dp"
+                android:layout_below="@+id/actd"
+                android:fontFamily="@font/bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15sp"
+                ></TextView>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="15/07/2020"
+                android:id="@+id/txtIntegrationDate"
+                android:textColor="#000"
+                android:layout_below="@+id/txtAcceptDate"
+                android:layout_toRightOf="@id/intd"
+                android:textSize="14dp"
+                android:fontFamily="@font/bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15sp"
+                ></TextView>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</LinearLayout>
