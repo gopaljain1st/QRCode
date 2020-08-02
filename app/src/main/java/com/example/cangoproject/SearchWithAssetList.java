@@ -35,7 +35,6 @@ public class SearchWithAssetList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_with_asset_list);
-        no=findViewById(R.id.no);
         ActionBar actionBar=getSupportActionBar();
         actionBar.setTitle("Asset List");
 

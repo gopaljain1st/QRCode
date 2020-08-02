@@ -103,14 +103,4 @@
         android:id="@+id/recycle_asset"
         android:layout_marginTop="110dp"
         ></androidx.recyclerview.widget.RecyclerView>
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:textSize="22sp"
-    android:text="No Asset Available"
-    android:layout_centerInParent="true"
-    android:textColor="@color/colorPrimaryDark"
-    android:gravity="center"
-    android:id="@+id/no"
-    />
 </RelativeLayout>

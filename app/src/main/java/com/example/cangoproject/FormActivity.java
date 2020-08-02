@@ -155,7 +155,7 @@ public class FormActivity extends AppCompatActivity {
         db.close();
         helper.close();
         Toast.makeText(this, "Data Saved", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(getApplicationContext(),SearchWithAssetList.class));
+        startActivity(new Intent(getApplicationContext(),AssetList.class));
         finish();
     }
     @Override
