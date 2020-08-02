@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Scanner</string>
+    <string name="app_name">e-ATP</string>
 
     <string-array name="type_string">
         <item>Router</item>

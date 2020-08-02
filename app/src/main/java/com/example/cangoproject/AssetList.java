@@ -9,64 +9,94 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.cangoproject.adapters.AssetAdapter;
+import com.example.cangoproject.fragments.SearchBottomFragnment;
+import com.example.cangoproject.models.Product;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
 public class AssetList extends AppCompatActivity {
 
-    RecyclerView rv;
+    RecyclerView recyclerView;
     LinearLayoutManager manager;
-    RecyclerView.Adapter<MyAdapter.MyAdapterViewHolder>adapter;
-    ArrayList<Product> al;
-    TextView text;
+
+    TextView no;
+    private ArrayList<Product> al;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_asset);
-        rv=findViewById(R.id.rv);
-        text=findViewById(R.id.text);
-        manager=new LinearLayoutManager(this);
-        al=new ArrayList<>();
-        readFromLocalStorage();
-        rv.setLayoutManager(manager);
-        adapter=new MyAdapter(this,al);
-        rv.setAdapter(adapter);
-
+        no=findViewById(R.id.no);
         ActionBar actionBar=getSupportActionBar();
         actionBar.setTitle("Asset List");
+
+        recyclerView=findViewById(R.id.rv);
+        al=new ArrayList<>();
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        DatabaseHelper helper=new DatabaseHelper(this);
+        SQLiteDatabase sqLiteDatabase=helper.getReadableDatabase();
+        Cursor c=sqLiteDatabase.rawQuery("select * from product",null);
+        while(c.moveToNext())
+        {
+            no.setVisibility(View.INVISIBLE);
+            byte[] imgByte = c.getBlob(20);
+            Bitmap image = BitmapFactory.decodeByteArray(imgByte,0,imgByte.length);
+            al.add(new Product(c.getInt(0),c.getString(1),c.getString(2),c.getString(3),c.getString(4),c.getString(5),c.getString(6),c.getString(7),
+                    c.getString(8),c.getString(9),c.getString(10),c.getString(11),c.getString(12),c.getString(13),c.getString(14),c.getString(15),
+                    c.getString(16),c.getString(17),c.getString(18),c.getString(19),image));
+        }
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(new AssetAdapter(this,al));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+
+
+        //al=new ArrayList<>();
+     //   readFromLocalStorage();
+      //  adapter=new MyAdapter(this,al);
+        //rv.setAdapter(adapter);
 
 
 
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottomNav);
-        bottomNavigationView.setSelectedItemId(R.id.list);
+        bottomNavigationView.setSelectedItemId(R.id.site);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.site:
-                        startActivity(new Intent(getApplicationContext(),HomePageActivity.class));
+                        startActivity(new Intent(getApplicationContext(),SiteActivity.class));
                         overridePendingTransition(0,0);
                         finish();
+                        break;
                     case R.id.list:
                         return true;
-                    case R.id.setting:
-                        startActivity(new Intent(getApplicationContext(),Setting.class));
+                    case R.id.search :
+                        startActivity(new Intent(getApplicationContext(),SearchWithAssetList.class));
                         overridePendingTransition(0,0);
                         finish();
-                        return true;
-
+                        break;
+                    case R.id.setting:
+                        startActivity(new Intent(getApplicationContext(),OutBox.class));
+                        overridePendingTransition(0,0);
+                        finish();
+                        break;
                 }
                 return false;
             }
         });
-
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
     }
@@ -79,7 +109,7 @@ public class AssetList extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
 
     }
-    private void readFromLocalStorage()
+   /* private void readFromLocalStorage()
     {
         DatabaseHelper helper=new DatabaseHelper(this);
         SQLiteDatabase sqLiteDatabase=helper.getReadableDatabase();
@@ -108,7 +138,7 @@ public class AssetList extends AppCompatActivity {
         }
         c.close();
         helper.close();
-    }
+    }*/
 
     @Override
     public void onBackPressed() {

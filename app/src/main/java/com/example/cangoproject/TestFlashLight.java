@@ -35,7 +35,7 @@ public class TestFlashLight extends AppCompatActivity {
         mCodeScanner.setDecodeCallback(new DecodeCallback() {
             @Override
             public void onDecoded(@NonNull final Result result) {
-                Intent in=new Intent(getApplicationContext(),Form.class);
+                Intent in=new Intent(getApplicationContext(),FormActivity.class);
                 in.putExtra("result",result.getText());
                 in.putExtra("hm",hm);
                 startActivity(in);

@@ -2,6 +2,7 @@ package com.example.cangoproject.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,19 +13,22 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cangoproject.DetailsActivity;
 import com.example.cangoproject.R;
 import com.example.cangoproject.RadioAsset;
 import com.example.cangoproject.models.AssetModel;
 import com.example.cangoproject.models.Domian;
+import com.example.cangoproject.models.Product;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class AssetAdapter extends RecyclerView.Adapter<AssetAdapter.AssetViewholder>  {
 
     Context context;
-    ArrayList<AssetModel> al;
+    ArrayList<Product> al;
 
-    public AssetAdapter(Context context, ArrayList<AssetModel> al) {
+    public AssetAdapter(Context context, ArrayList<Product> al) {
         this.context = context;
         this.al = al;
     }
@@ -39,15 +43,23 @@ public class AssetAdapter extends RecyclerView.Adapter<AssetAdapter.AssetViewhol
     @Override
     public void onBindViewHolder(@NonNull AssetViewholder holder, int position) {
 
-        AssetModel assetModel=al.get(position);
-        holder.domain_number.setText(assetModel.getAsset_number());
-        holder.domain_name.setText(assetModel.getAsset_name());
-        holder.domain_id.setText(assetModel.getAsset_id());
-        holder.imgQr.setImageResource(assetModel.getAsset_image());
+        final Product assetModel=al.get(position);
+        holder.domain_number.setText(assetModel.getRadioUnit());
+        holder.domain_name.setText(assetModel.getRadioName());
+        holder.domain_id.setText(assetModel.getRadioId());
+        holder.imgQr.setImageResource(R.drawable.qrcode);
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                context.startActivity(new Intent(context, RadioAsset.class));
+            public void onClick(View v)
+            {
+                Intent in=new Intent(context, DetailsActivity.class);
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                assetModel.getImage().compress(Bitmap.CompressFormat.PNG,100,stream);
+                byte[] byteArray = stream.toByteArray();
+                in.putExtra("image",byteArray);
+                assetModel.setImage(null);
+                in.putExtra("product",assetModel);
+                context.startActivity(in);
             }
         });
     }

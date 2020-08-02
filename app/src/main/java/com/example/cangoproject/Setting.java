@@ -23,7 +23,7 @@ public class Setting extends AppCompatActivity {
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottomNav);
         bottomNavigationView.setSelectedItemId(R.id.setting);
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+       /* bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
@@ -43,7 +43,7 @@ public class Setting extends AppCompatActivity {
                 }
                 return false;
             }
-        });
+        });*/
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }

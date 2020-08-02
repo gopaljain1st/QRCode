@@ -40,16 +40,17 @@ public class RadioAdapter extends RecyclerView.Adapter<RadioAdapter.RadioViewHol
     @Override
     public void onBindViewHolder(@NonNull RadioViewHolder holder, int position) {
 
-        Radio radio=al.get(position);
+      final   Radio radio=al.get(position);
         holder.radio_unit.setText(radio.getRadio_unit());
         holder.radio_name.setText(radio.getRadio_name());
         holder.radio_id.setText(radio.getRadio_id());
-        hm.put("radioId",radio.getRadio_id());
-        hm.put("radioName",radio.getRadio_name());
-        hm.put("radioUnit",radio.getRadio_unit());
+
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                hm.put("radioId",radio.getRadio_id());
+                hm.put("radioName",radio.getRadio_name());
+                hm.put("radioUnit",radio.getRadio_unit());
                 context.startActivity(new Intent(context, TestFlashLight.class).putExtra("hm",hm));
             }
         });

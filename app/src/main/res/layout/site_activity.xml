@@ -18,7 +18,7 @@
             android:text="Tagging Summary"
             android:layout_marginLeft="10dp"
             android:padding="5dp"
-            android:fontFamily="@font/bold"
+            android:fontFamily="@font/roboto"
             android:textSize="17sp"
             android:textColor="#000"
             android:textStyle="bold"
@@ -58,7 +58,7 @@
                         android:layout_marginLeft="17dp"
                         android:layout_marginTop="10dp"
                         android:textSize="17sp"
-                        android:fontFamily="@font/bold"
+                        android:fontFamily="@font/roboto"
                         android:textColor="#000"
                         />
                     <TextView
@@ -68,7 +68,7 @@
                         android:layout_marginLeft="18dp"
                         android:layout_marginTop="40dp"
                         android:layout_toRightOf="@+id/image5"
-                        android:fontFamily="@font/bold"
+                        android:fontFamily="@font/roboto"
                         android:text="343"
                         android:textColor="@color/cardview_dark_background"
                         android:textSize="30sp" />
@@ -103,7 +103,7 @@
                         android:layout_marginTop="10dp"
                         android:textSize="17sp"
                         android:textColor="#000"
-                        android:fontFamily="@font/bold"
+                        android:fontFamily="@font/roboto"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -111,7 +111,7 @@
                         android:layout_marginLeft="18dp"
                         android:layout_marginTop="40dp"
                         android:layout_toRightOf="@+id/tempView"
-                        android:fontFamily="@font/bold"
+                        android:fontFamily="@font/roboto"
                         android:text="20"
                         android:textColor="@color/cardview_dark_background"
                         android:textSize="30sp" />
@@ -150,7 +150,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:text="Site Name"
-                        android:fontFamily="@font/bold"
+                        android:fontFamily="@font/roboto"
                         android:textColor="#000"
                         android:drawableLeft="@drawable/location"
                         android:drawableTint="#000"
@@ -166,16 +166,6 @@
                         android:padding="10dp"
                         />
                 </LinearLayout>
-                <ImageView
-                    android:layout_width="0dp"
-                    android:padding="10dp"
-                    android:scaleType="centerCrop"
-                    android:layout_weight="0.2"
-                    android:layout_gravity="right"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/notification"
-                    android:tint="#000"
-                    />
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
@@ -209,7 +199,7 @@
                 android:layout_marginLeft="15dp"
                 android:padding="5dp"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/bold"
+                android:fontFamily="@font/roboto"
                 android:textSize="17sp"
                 android:textColor="#000"
                 android:textStyle="bold"

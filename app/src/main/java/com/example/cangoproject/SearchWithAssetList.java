@@ -1,10 +1,12 @@
 package com.example.cangoproject;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
@@ -21,6 +23,7 @@ import com.example.cangoproject.fragments.SelectSiteNameBottomSheetDialog;
 import com.example.cangoproject.models.AssetModel;
 import com.example.cangoproject.models.Domian;
 import com.example.cangoproject.models.Product;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
@@ -57,7 +60,7 @@ public class SearchWithAssetList extends AppCompatActivity {
         });
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         al=new ArrayList<>();
-        DatabaseHelper helper=new DatabaseHelper(this);
+        /*DatabaseHelper helper=new DatabaseHelper(this);
         SQLiteDatabase sqLiteDatabase=helper.getReadableDatabase();
         Cursor c=sqLiteDatabase.rawQuery("select * from product",null);
         while(c.moveToNext())
@@ -75,8 +78,36 @@ public class SearchWithAssetList extends AppCompatActivity {
         al.add(new AssetModel("Antenna","25894","1.00",0));
         al.add(new AssetModel("Wireless Component","25894","1.00",R.drawable.qrcode));
 */
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(new AssetAdapter(this,al));
+      /*  recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(new AssetAdapter(this,al));*/
+        BottomNavigationView bottomNavigationView=findViewById(R.id.bottomNav);
+        bottomNavigationView.setSelectedItemId(R.id.site);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.site:
+                        startActivity(new Intent(getApplicationContext(),SiteActivity.class));
+                        overridePendingTransition(0,0);
+                        finish();
+                        return true;
+                    case R.id.list:
+                        startActivity(new Intent(getApplicationContext(),AssetList.class));
+                        overridePendingTransition(0,0);
+                        finish();
+                        return true;
+                    case R.id.search :
+                        return true;
+                    case R.id.setting:
+                        startActivity(new Intent(getApplicationContext(),OutBox.class));
+                        overridePendingTransition(0,0);
+                        finish();
+                        return true;
+                }
+                return false;
+            }
+        });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
@@ -84,7 +115,8 @@ public class SearchWithAssetList extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            onBackPressed();
+          startActivity(new Intent(SearchWithAssetList.this,SiteActivity.class));
+           finish();
         }
         return super.onOptionsItemSelected(item);
     }

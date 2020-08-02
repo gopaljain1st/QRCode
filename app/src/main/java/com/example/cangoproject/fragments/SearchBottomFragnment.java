@@ -94,7 +94,7 @@ public class SearchBottomFragnment extends BottomSheetDialogFragment {
         state = v.findViewById(R.id.assetstate);
         vendor = v.findViewById(R.id.vendors);
 
-        type.setBackgroundDrawable(getResources().getDrawable(R.drawable.border1));
+        type.setBackgroundDrawable(getResources().getDrawable(R.color.white));
         radio_active.setVisibility(View.VISIBLE);
         radio_passive.setVisibility(View.VISIBLE);
 
@@ -102,10 +102,10 @@ public class SearchBottomFragnment extends BottomSheetDialogFragment {
             @Override
             public void onClick(View view) {
                 if (domain.getText().equals("Domains")) {
-                    domain.setBackgroundDrawable(getResources().getDrawable(R.drawable.border1));
-                    type.setBackgroundDrawable(getResources().getDrawable(R.drawable.border));
-                    state.setBackgroundDrawable(getResources().getDrawable(R.drawable.border));
-                    vendor.setBackgroundDrawable(getResources().getDrawable(R.drawable.border));
+                    domain.setBackgroundDrawable(getResources().getDrawable(R.color.white));
+                    type.setBackgroundDrawable(getResources().getDrawable(R.color.back));
+                    state.setBackgroundDrawable(getResources().getDrawable(R.color.back));
+                    vendor.setBackgroundDrawable(getResources().getDrawable(R.color.back));
                     radio_active.setVisibility(View.GONE);
                     radio_passive.setVisibility(View.GONE);
                     radio_delete.setVisibility(View.GONE);
@@ -132,10 +132,10 @@ public class SearchBottomFragnment extends BottomSheetDialogFragment {
             @Override
             public void onClick(View view) {
                 if (type.getText().equals("Asset Type")) {
-                    type.setBackgroundDrawable(getResources().getDrawable(R.drawable.border1));
-                    domain.setBackgroundDrawable(getResources().getDrawable(R.drawable.border));
-                    state.setBackgroundDrawable(getResources().getDrawable(R.drawable.border));
-                    vendor.setBackgroundDrawable(getResources().getDrawable(R.drawable.border));
+                    type.setBackgroundDrawable(getResources().getDrawable(R.color.white));
+                    domain.setBackgroundDrawable(getResources().getDrawable(R.color.back));
+                    state.setBackgroundDrawable(getResources().getDrawable(R.color.back));
+                    vendor.setBackgroundDrawable(getResources().getDrawable(R.color.back));
                     radio_active.setVisibility(View.VISIBLE);
                     radio_passive.setVisibility(View.VISIBLE);
                     radio_delete.setVisibility(View.GONE);
@@ -159,12 +159,12 @@ public class SearchBottomFragnment extends BottomSheetDialogFragment {
             @Override
             public void onClick(View view) {
                 if (state.getText().equals("Asset State")) {
-                    type.setBackgroundDrawable(getResources().getDrawable(R.drawable.border));
-                    domain.setBackgroundDrawable(getResources().getDrawable(R.drawable.border));
-                    state.setBackgroundDrawable(getResources().getDrawable(R.drawable.border1));
-                    vendor.setBackgroundDrawable(getResources().getDrawable(R.drawable.border));
-                     radio_delete.setVisibility(View.VISIBLE);
-                     radio_active.setVisibility(View.GONE);
+                    type.setBackgroundDrawable(getResources().getDrawable(R.color.back));
+                    domain.setBackgroundDrawable(getResources().getDrawable(R.color.back));
+                    state.setBackgroundDrawable(getResources().getDrawable(R.color.white));
+                    vendor.setBackgroundDrawable(getResources().getDrawable(R.color.back));
+                    radio_delete.setVisibility(View.VISIBLE);
+                    radio_active.setVisibility(View.GONE);
                     radio_passive.setVisibility(View.GONE);
                     radio_deployed.setVisibility(View.VISIBLE);
                     radio_disable.setVisibility(View.VISIBLE);
@@ -186,10 +186,10 @@ public class SearchBottomFragnment extends BottomSheetDialogFragment {
             @Override
             public void onClick(View view) {
                 if (vendor.getText().equals("Vendors")) {
-                    type.setBackgroundDrawable(getResources().getDrawable(R.drawable.border));
-                    domain.setBackgroundDrawable(getResources().getDrawable(R.drawable.border));
-                    state.setBackgroundDrawable(getResources().getDrawable(R.drawable.border));
-                    vendor.setBackgroundDrawable(getResources().getDrawable(R.drawable.border1));
+                    type.setBackgroundDrawable(getResources().getDrawable(R.color.back));
+                    domain.setBackgroundDrawable(getResources().getDrawable(R.color.back));
+                    state.setBackgroundDrawable(getResources().getDrawable(R.color.back));
+                    vendor.setBackgroundDrawable(getResources().getDrawable(R.color.white));
 
                     radio_nokia.setVisibility(View.VISIBLE);
                     radio_ericsson.setVisibility(View.VISIBLE);

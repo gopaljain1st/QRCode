@@ -111,9 +111,8 @@ public class HomePageActivity extends AppCompatActivity {
         });
 
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottomNav);
-        bottomNavigationView.setSelectedItemId(R.id.dashboard);
-
-       bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+      //  bottomNavigationView.setSelectedItemId(R.id.dashboard);
+/*bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
            @Override
            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                switch (item.getItemId()){
@@ -131,6 +130,7 @@ public class HomePageActivity extends AppCompatActivity {
                return false;
            }
        });
+       */
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 

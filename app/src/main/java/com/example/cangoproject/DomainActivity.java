@@ -1,10 +1,12 @@
 package com.example.cangoproject;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -24,15 +26,11 @@ public class DomainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_domain);
-        hm=new HashMap<>();
+
+        ActionBar actionBar=getSupportActionBar();
+        actionBar.setTitle("Domain");
+
         hm=(HashMap<String, String>) getIntent().getSerializableExtra("hm");
-        ImageView back=findViewById(R.id.back);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
         recyclerView=findViewById(R.id.rv);
         al=new ArrayList<>();
 
@@ -44,6 +42,19 @@ public class DomainActivity extends AppCompatActivity {
         al.add(new Domian("FTTH","FTTH ID : 30","82"));
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(new DomainAdapter(this,al,hm));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

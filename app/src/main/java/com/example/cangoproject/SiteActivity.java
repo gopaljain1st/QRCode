@@ -66,13 +66,17 @@ public class SiteActivity extends AppCompatActivity
                     case R.id.site:
                         return true;
                     case R.id.list:
+                        startActivity(new Intent(getApplicationContext(),AssetList.class));
+                        overridePendingTransition(0,0);
+                        finish();
                         return true;
                     case R.id.search :
                         startActivity(new Intent(getApplicationContext(),SearchWithAssetList.class));
                         overridePendingTransition(0,0);
                         finish();
+                        return true;
                     case R.id.setting:
-                        startActivity(new Intent(getApplicationContext(),Setting.class));
+                        startActivity(new Intent(getApplicationContext(),OutBox.class));
                         overridePendingTransition(0,0);
                         finish();
                         return true;

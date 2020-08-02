@@ -30,7 +30,7 @@
                 android:id="@+id/td"
                 android:textColor="#000"
                 android:textSize="14dp"
-                android:fontFamily="@font/bold"
+                android:fontFamily="@font/roboto"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15sp"
                 ></TextView>
@@ -44,7 +44,7 @@
                 android:textColor="#000"
                 android:layout_toRightOf="@id/td"
                 android:textSize="14dp"
-                android:fontFamily="@font/bold"
+                android:fontFamily="@font/roboto"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15sp"
                 ></TextView>
@@ -58,7 +58,7 @@
                 android:textColor="#000"
                 android:textSize="14dp"
                 android:layout_below="@+id/td"
-                android:fontFamily="@font/bold"
+                android:fontFamily="@font/roboto"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15sp"
                 ></TextView>
@@ -73,7 +73,7 @@
                 android:layout_below="@+id/txtTdID"
                 android:layout_toRightOf="@id/ass"
                 android:textSize="14dp"
-                android:fontFamily="@font/bold"
+                android:fontFamily="@font/roboto"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15sp"
                 ></TextView>
@@ -87,7 +87,7 @@
                 android:textColor="#000"
                 android:textSize="14dp"
                 android:layout_below="@+id/ass"
-                android:fontFamily="@font/bold"
+                android:fontFamily="@font/roboto"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15sp"
                 ></TextView>
@@ -102,7 +102,7 @@
                 android:layout_below="@+id/txtAssID"
                 android:layout_toRightOf="@id/cab"
                 android:textSize="14dp"
-                android:fontFamily="@font/bold"
+                android:fontFamily="@font/roboto"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15sp"
                 ></TextView>
@@ -115,7 +115,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/card1"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
+        android:layout_height="155dp"
         android:layout_margin="13dp"
         android:background="@drawable/background"
         android:clickable="true"
@@ -137,7 +137,7 @@
                 android:id="@+id/ru"
                 android:textColor="#000"
                 android:textSize="14dp"
-                android:fontFamily="@font/bold"
+                android:fontFamily="@font/roboto"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15sp"
                 ></TextView>
@@ -151,7 +151,7 @@
                 android:textColor="#000"
                 android:layout_toRightOf="@id/ru"
                 android:textSize="14dp"
-                android:fontFamily="@font/bold"
+                android:fontFamily="@font/roboto"
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="15sp"
                 ></TextView>
@@ -165,7 +165,7 @@
                 android:textColor="#000"
                 android:textSize="14dp"
                 android:layout_below="@+id/ru"
-                android:fontFamily="@font/bold"
+                android:fontFamily="@font/roboto"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15sp"
                 ></TextView>
@@ -180,7 +180,7 @@
                 android:layout_below="@+id/txtRUID"
                 android:layout_toRightOf="@id/rub"
                 android:textSize="14dp"
-                android:fontFamily="@font/bold"
+                android:fontFamily="@font/roboto"
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="15sp"
                 ></TextView>
@@ -194,7 +194,7 @@
                 android:textColor="#000"
                 android:textSize="14dp"
                 android:layout_below="@+id/rub"
-                android:fontFamily="@font/bold"
+                android:fontFamily="@font/roboto"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15sp"
                 ></TextView>
@@ -209,7 +209,7 @@
                 android:layout_below="@+id/txtRUBID"
                 android:layout_toRightOf="@id/rup"
                 android:textSize="14dp"
-                android:fontFamily="@font/bold"
+                android:fontFamily="@font/roboto"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15sp"
                 ></TextView>
@@ -223,7 +223,7 @@
                 android:textColor="#000"
                 android:textSize="14dp"
                 android:layout_below="@+id/rup"
-                android:fontFamily="@font/bold"
+                android:fontFamily="@font/roboto"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15sp"
                 ></TextView>
@@ -238,7 +238,7 @@
                 android:layout_below="@+id/txtRUPID"
                 android:layout_toRightOf="@id/rut"
                 android:textSize="14dp"
-                android:fontFamily="@font/bold"
+                android:fontFamily="@font/roboto"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="15sp"
                 ></TextView>
@@ -275,7 +275,7 @@
                 android:id="@+id/st"
                 android:textColor="#000"
                 android:textSize="14dp"
-                android:fontFamily="@font/bold"
+                android:fontFamily="@font/roboto"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15sp"
                 ></TextView>
@@ -289,7 +289,7 @@
                 android:textColor="#000"
                 android:layout_toRightOf="@id/st"
                 android:textSize="14dp"
-                android:fontFamily="@font/bold"
+                android:fontFamily="@font/roboto"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15sp"
                 ></TextView>
@@ -303,7 +303,7 @@
                 android:textColor="#000"
                 android:textSize="14dp"
                 android:layout_below="@+id/st"
-                android:fontFamily="@font/bold"
+                android:fontFamily="@font/roboto"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15sp"
                 ></TextView>
@@ -318,7 +318,7 @@
                 android:layout_below="@+id/txtStatus"
                 android:layout_toRightOf="@id/actd"
                 android:textSize="14dp"
-                android:fontFamily="@font/bold"
+                android:fontFamily="@font/roboto"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15sp"
                 ></TextView>
@@ -332,7 +332,7 @@
                 android:textColor="#000"
                 android:textSize="14dp"
                 android:layout_below="@+id/actd"
-                android:fontFamily="@font/bold"
+                android:fontFamily="@font/roboto"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15sp"
                 ></TextView>
@@ -347,7 +347,7 @@
                 android:layout_below="@+id/txtAcceptDate"
                 android:layout_toRightOf="@id/intd"
                 android:textSize="14dp"
-                android:fontFamily="@font/bold"
+                android:fontFamily="@font/roboto"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15sp"
                 ></TextView>

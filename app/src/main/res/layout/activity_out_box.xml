@@ -25,7 +25,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="110dp"
-            android:background="@drawable/border">
+            >
 
             <ImageView
                 android:layout_width="40dp"
@@ -34,7 +34,7 @@
                 android:layout_centerVertical="true"
                 android:src="@drawable/ic_add_box_black_24dp"
                 ></ImageView>
-            
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -64,9 +64,32 @@
                 android:src="@drawable/ic_sync_black_24dp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-              ></ImageView>
+                ></ImageView>
+
+
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Assets Pending Sync"
+        android:layout_below="@id/card_site"
+
+        android:textSize="15sp"
+        android:id="@+id/asst"
+        android:textColor="#000"
+        android:fontFamily="@font/roboto"
+        android:layout_marginLeft="20dp"
+        ></TextView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/asst"
+        android:layout_marginTop="4dp"
+        android:id="@+id/sync_list"
+        ></androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>

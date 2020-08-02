@@ -5,6 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SearchWithAssetList">
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomNav"
+        android:layout_gravity="bottom"
+        app:itemIconSize="25dp"
+        app:labelVisibilityMode="labeled"
+        android:fitsSystemWindows="true"
+        app:itemBackground="@color/colorAccent"
+        app:itemTextColor="@drawable/selector"
+        app:itemIconTint="@drawable/selector"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/main_menu"/>
+
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -89,5 +103,14 @@
         android:id="@+id/recycle_asset"
         android:layout_marginTop="110dp"
         ></androidx.recyclerview.widget.RecyclerView>
-
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="22sp"
+    android:text="No Asset Available"
+    android:layout_centerInParent="true"
+    android:textColor="@color/colorPrimaryDark"
+    android:gravity="center"
+    android:id="@+id/no"
+    />
 </RelativeLayout>

@@ -2,12 +2,15 @@ package com.example.cangoproject.models;
 
 import android.graphics.Bitmap;
 
-public class Product
+import java.io.Serializable;
+
+public class Product implements Serializable
 {
+    //public static transient DNode dNode = null;
     private int id;
     private String transactionId,serialNo,Quantity,assetId,towerId,radioUnitId,cabinetId,radioUnitBand,radioUnitPlacement,radioUnitType,status,acceptanceDate,integrationDate,projectCode,assetType,domainId,radioId,radioName,radioUnit;
     private Bitmap image;
-    public Product(int id, String transactionId, String serialNo, String quantity, String assetId, String towerId, String radioUnitId, String cabinetId, String radioUnitBand, String radioUnitPlacement, String radioUnitType, String status, String acceptanceDate, String integrationDate, String projectCode, String assetType, String domainId, String radioId, String radioName, String radioUnit, Bitmap image) {
+    public Product(int id, String transactionId, String serialNo, String quantity, String assetId, String towerId, String radioUnitId, String cabinetId, String radioUnitBand, String radioUnitPlacement, String radioUnitType, String status, String acceptanceDate, String integrationDate, String projectCode, String assetType, String domainId, String radioName,String radioId, String radioUnit, Bitmap image) {
         this.id = id;
         this.transactionId = transactionId;
         this.serialNo = serialNo;
@@ -192,7 +195,10 @@ public class Product
     }
 
     public Bitmap getImage() {
-        return image;
+      return image;
+    }
+
+    public Product() {
     }
 
     public void setImage(Bitmap image) {

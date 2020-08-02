@@ -23,7 +23,8 @@
         android:roundIcon="@mipmap/qrlogo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FormActivity">
+        <activity android:name=".LoginActivity"
+            android:theme="@style/myTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,10 +38,10 @@
 
         <activity
             android:name=".DomainActivity"
-            android:theme="@style/myTheme.NoActionBar" />
+            />
         <activity
             android:name=".AssetTypeActivity"
-            android:theme="@style/myTheme.NoActionBar" />
+           />
         <activity android:name=".ScanCodeActivity" />
         <activity
             android:name=".Setting"
@@ -58,12 +59,15 @@
         <activity
             android:name=".SiteActivity"
             android:theme="@style/myTheme.NoActionBar" />
-<activity
+        <activity android:name=".FormActivity"
+            android:theme="@style/myTheme.NoActionBar"
+            />
+         <activity
             android:name=".TestFlashLight"
             android:parentActivityName=".SiteActivity" />
         <activity
             android:name=".RadioAsset"
-            android:theme="@style/myTheme.NoActionBar" />
+            />
     </application>
 
 </manifest>

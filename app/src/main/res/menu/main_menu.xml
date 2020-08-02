@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Site"
+    <item android:title="Dash"
         android:id="@+id/site"
-        android:icon="@drawable/site"></item>
+        android:icon="@drawable/ic_home_black_24dp"></item>
 
     <item android:icon="@drawable/ic_toc_black_24dp"
         android:title="Assets"
@@ -14,6 +14,6 @@
         android:icon="@drawable/search"></item>
 
     <item android:id="@+id/setting"
-        android:title="Share"
-        android:icon="@drawable/share"></item>
+        android:title="Sync"
+        android:icon="@drawable/ic_sync_black_24dp"></item>
 </menu>
