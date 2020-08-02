@@ -21,6 +21,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(LoginActivity.this,SiteActivity.class);
+                intent.putExtra("id",1);
                 startActivity(intent);
                 finish();
             }

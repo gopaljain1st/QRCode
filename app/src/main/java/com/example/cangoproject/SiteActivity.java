@@ -33,11 +33,13 @@ public class SiteActivity extends AppCompatActivity
     TextView selectedLine,siteName;
     ArrayList<SiteProjects>al;
     FloatingActionButton addAssert;
+    int id=1;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.site_activity);
+        id=getIntent().getIntExtra("id",1);
         toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         selectedLine=findViewById(R.id.selectedLine);
@@ -97,14 +99,42 @@ public class SiteActivity extends AppCompatActivity
         rv=findViewById(R.id.rv);
         rv.setLayoutManager(new LinearLayoutManager(this));
         al=new ArrayList<>();
-        al.add(new SiteProjects(1,"01","32"));
-        al.add(new SiteProjects(1,"02","42"));
-        al.add(new SiteProjects(1,"03","22"));
-        al.add(new SiteProjects(1,"04","12"));
-        al.add(new SiteProjects(1,"05","52"));
-        al.add(new SiteProjects(1,"06","64"));
-        al.add(new SiteProjects(1,"07","32"));
-        al.add(new SiteProjects(1,"08","42"));
+        if(id==1)
+        {
+            al.add(new SiteProjects(1,"01","32"));
+            al.add(new SiteProjects(1,"02","42"));
+            al.add(new SiteProjects(1,"03","22"));
+            al.add(new SiteProjects(1,"04","12"));
+            al.add(new SiteProjects(1,"05","52"));
+            al.add(new SiteProjects(1,"06","64"));
+            al.add(new SiteProjects(1,"07","32"));
+            al.add(new SiteProjects(1,"08","42"));
+        }
+        else if(id==2)
+        {
+            al.add(new SiteProjects(1,"09","45"));
+            al.add(new SiteProjects(1,"10","42"));
+            al.add(new SiteProjects(1,"11","15"));
+            al.add(new SiteProjects(1,"12","12"));
+            al.add(new SiteProjects(1,"13","52"));
+            al.add(new SiteProjects(1,"14","64"));
+            al.add(new SiteProjects(1,"15","32"));
+            al.add(new SiteProjects(1,"16","42"));
+        }
+        else if(id==3)
+        {
+            al.add(new SiteProjects(1,"77","55"));
+            al.add(new SiteProjects(1,"25","98"));
+            al.add(new SiteProjects(1,"45","09"));
+            al.add(new SiteProjects(1,"20","02"));
+        }
+        else if(id==4)
+        {
+            al.add(new SiteProjects(1,"17","32"));
+            al.add(new SiteProjects(1,"18","42"));
+            al.add(new SiteProjects(1,"19","22"));
+            al.add(new SiteProjects(1,"21","12"));
+        }
         rv.setAdapter(new SiteProjectAdapter(this,al));
         rv.setNestedScrollingEnabled(false);
     }
