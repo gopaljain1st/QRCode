@@ -6,7 +6,9 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,12 +21,18 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cangoproject.BuildConfig;
 import com.example.cangoproject.R;
+import com.example.cangoproject.RadioAsset;
 import com.example.cangoproject.TestFlashLight;
 import com.example.cangoproject.models.Radio;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import static androidx.core.app.ActivityCompat.shouldShowRequestPermissionRationale;
+import static androidx.core.app.ActivityCompat.startActivityForResult;
 
 public class RadioAdapter extends RecyclerView.Adapter<RadioAdapter.RadioViewHolder> {
 
@@ -62,12 +70,31 @@ public class RadioAdapter extends RecyclerView.Adapter<RadioAdapter.RadioViewHol
                 hm.put("radioName",radio.getRadio_name());
                 hm.put("radioUnit",radio.getRadio_unit());
 
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    if (ContextCompat.checkSelfPermission(context,Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-                      //ActivityCompat.requestPermissions(new String[] {Manifest.permission.CAMERA}, 1);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+                {
+                    if (ContextCompat.checkSelfPermission(context,Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
+                    {
+                        boolean showRationale = ActivityCompat.shouldShowRequestPermissionRationale((RadioAsset) context , Manifest.permission.CAMERA );
+
                         ActivityCompat.requestPermissions((Activity)context,
                                 new String[] {Manifest.permission.CAMERA},
                                 1);
+                        if (! showRationale)
+                        {
+                            new androidx.appcompat.app.AlertDialog.Builder(context).setTitle("Camera Permission").setMessage("You have previously declined this permission.\n" +
+                                    "You must approve this permission in \"Permissions\" in the app settings on your device.").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which)
+                                {
+                                    Intent intent = new Intent();
+                                    intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                                    Uri uri = Uri.fromParts("package", context.getPackageName(), null);
+                                    intent.setData(uri);
+                                    context.startActivity(intent);
+                                }
+                            }).show();
+                        }
+
                     }
                     else {
                         context.startActivity(new Intent(context, TestFlashLight.class).putExtra("hm",hm));

@@ -39,6 +39,8 @@ public class AssetTypeActivity extends AppCompatActivity {
         Intent intent =getIntent();
         hm=(HashMap<String, String>) intent.getSerializableExtra("hm");
         recyclerView=findViewById(R.id.rv);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        al=new ArrayList<>();
         al.add(new Domian("Genset","Trx : 20","1.00"));
         al.add(new Domian("Air Conditioner","Trx ID : 25","1.00"));
         al.add(new Domian("Rectifier","Trx ID : 28","1.00"));
