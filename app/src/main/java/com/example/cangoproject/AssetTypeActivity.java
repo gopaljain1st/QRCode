@@ -11,8 +11,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.example.cangoproject.adapters.DomainAdapter;
 import com.example.cangoproject.adapters.SiteProjectAdapter;
 import com.example.cangoproject.adapters.SiteTypeAdapter;
+import com.example.cangoproject.models.Domian;
 import com.example.cangoproject.models.SiteProjects;
 import com.example.cangoproject.models.SiteType;
 
@@ -22,7 +24,7 @@ import java.util.HashMap;
 public class AssetTypeActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    ArrayList<SiteType> al;
+    ArrayList<Domian> al;
     HashMap<String,String>hm;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,15 +39,12 @@ public class AssetTypeActivity extends AppCompatActivity {
         Intent intent =getIntent();
         hm=(HashMap<String, String>) intent.getSerializableExtra("hm");
         recyclerView=findViewById(R.id.rv);
-        al=new ArrayList<>();
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        al=new ArrayList<>();
-        al.add(new SiteType("12","Active Assets"));
-        al.add(new SiteType("30","Passive Assets"));
-        recyclerView.setAdapter(new SiteTypeAdapter(this,al,hm));
-
+        al.add(new Domian("Genset","Trx : 20","1.00"));
+        al.add(new Domian("Air Conditioner","Trx ID : 25","1.00"));
+        al.add(new Domian("Rectifier","Trx ID : 28","1.00"));
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(new DomainAdapter(this,al,hm));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
     }
 
     @Override

@@ -5,6 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".OutBox">
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomNav"
+        android:layout_gravity="bottom"
+        app:itemIconSize="25dp"
+        app:labelVisibilityMode="labeled"
+        android:fitsSystemWindows="true"
+        app:itemBackground="@color/colorAccent"
+        app:itemTextColor="@drawable/selector"
+        app:itemIconTint="@drawable/selector"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/main_menu"/>
+
 
 
     <androidx.cardview.widget.CardView
@@ -52,6 +66,8 @@
                 android:text="6 Assets Pending Sync"
                 android:layout_marginTop="50dp"
                 android:textColor="#000"
+android:id="@+id/txtPending"
+
                 android:textSize="15sp"
                 android:fontFamily="@font/roboto"
                 android:layout_centerHorizontal="true"

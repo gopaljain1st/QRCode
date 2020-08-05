@@ -1,17 +1,25 @@
 package com.example.cangoproject;
 
 import android.Manifest;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.SimpleExpandableListAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
@@ -34,11 +42,37 @@ public class SiteActivity extends AppCompatActivity
     ArrayList<SiteProjects>al;
     FloatingActionButton addAssert;
     int id=1;
+   ImageView txtLogout;
+    AlertDialog.Builder builder;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.site_activity);
+        builder = new AlertDialog.Builder(this);
+        txtLogout=findViewById(R.id.txtLogout);
+
+        txtLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View view) {
+                builder.setMessage("Are you sure you want to logout this application ?")
+                        .setCancelable(false)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                logout(view);
+                                finish();
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alert = builder.create();
+                alert.setTitle("Logout");
+                alert.show();
+            }
+        });
         id=getIntent().getIntExtra("id",1);
         toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -138,4 +172,15 @@ public class SiteActivity extends AppCompatActivity
         rv.setAdapter(new SiteProjectAdapter(this,al));
         rv.setNestedScrollingEnabled(false);
     }
+
+    public  void logout(View view){
+        SharedPreferences sharedpreferences = getSharedPreferences("login", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        editor.remove("name");
+        editor.remove("password");
+        editor.commit();
+        startActivity(new Intent(SiteActivity.this,LoginActivity.class));
+        finish();
+    }
+
 }

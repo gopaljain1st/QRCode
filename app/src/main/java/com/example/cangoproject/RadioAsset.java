@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,6 +32,12 @@ public class RadioAsset extends AppCompatActivity {
 
         ActionBar actionBar=getSupportActionBar();
         actionBar.setTitle("Radio Asset");
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[] {Manifest.permission.CAMERA}, 1);
+            }
+        }
 
         hm=(HashMap<String, String>) getIntent().getSerializableExtra("hm");
         recyclerView=findViewById(R.id.rv);

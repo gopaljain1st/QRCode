@@ -80,7 +80,7 @@ public class SearchWithAssetList extends AppCompatActivity {
       /*  recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(new AssetAdapter(this,al));*/
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottomNav);
-        bottomNavigationView.setSelectedItemId(R.id.site);
+        bottomNavigationView.setSelectedItemId(R.id.search);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -120,7 +120,8 @@ public class SearchWithAssetList extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     @Override
-    public void onBackPressed() {
+    public void onBackPressed()
+    {
         super.onBackPressed();
     }
 }

@@ -38,10 +38,10 @@ public class SelectSiteNameBottomSheetDialog extends BottomSheetDialogFragment
           });
           recyclerView.setHasFixedSize(true);
           al=new ArrayList<>();
-          al.add(new SiteName(1,"Adambakkam"));
-          al.add(new SiteName(2,"Madhavaram"));
-          al.add(new SiteName(3,"Mambalam"));
-          al.add(new SiteName(4,"Nungambakkam"));
+          al.add(new SiteName(1,"PAG-684638-DYL"));
+          al.add(new SiteName(2,"HDK-847478-DUO"));
+          al.add(new SiteName(3,"TWI-739633-BUW"));
+          al.add(new SiteName(4,"PEQ-392641-LWU"));
           recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
           recyclerView.setAdapter(new BottomSheetAdapter(getContext(),al));
           return v;

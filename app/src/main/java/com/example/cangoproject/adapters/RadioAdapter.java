@@ -1,14 +1,22 @@
 package com.example.cangoproject.adapters;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cangoproject.R;
@@ -23,6 +31,7 @@ public class RadioAdapter extends RecyclerView.Adapter<RadioAdapter.RadioViewHol
     Context context;
     ArrayList<Radio> al;
     HashMap<String,String>hm;
+    AlertDialog.Builder builder;
 
     public RadioAdapter(Context context, ArrayList<Radio> al,HashMap<String,String>hm) {
         this.context = context;
@@ -47,11 +56,24 @@ public class RadioAdapter extends RecyclerView.Adapter<RadioAdapter.RadioViewHol
 
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 hm.put("radioId",radio.getRadio_id());
                 hm.put("radioName",radio.getRadio_name());
                 hm.put("radioUnit",radio.getRadio_unit());
-                context.startActivity(new Intent(context, TestFlashLight.class).putExtra("hm",hm));
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    if (ContextCompat.checkSelfPermission(context,Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                      //ActivityCompat.requestPermissions(new String[] {Manifest.permission.CAMERA}, 1);
+                        ActivityCompat.requestPermissions((Activity)context,
+                                new String[] {Manifest.permission.CAMERA},
+                                1);
+                    }
+                    else {
+                        context.startActivity(new Intent(context, TestFlashLight.class).putExtra("hm",hm));
+                    }
+                }
+
             }
         });
 
@@ -62,7 +84,7 @@ public class RadioAdapter extends RecyclerView.Adapter<RadioAdapter.RadioViewHol
         return al.size();
     }
 
-    public class RadioViewHolder extends RecyclerView.ViewHolder{
+    public class RadioViewHolder extends RecyclerView.ViewHolder {
         TextView radio_name,radio_id,radio_unit;;
         CardView card;
         public RadioViewHolder(@NonNull View itemView) {

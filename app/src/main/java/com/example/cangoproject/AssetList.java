@@ -27,7 +27,6 @@ public class AssetList extends AppCompatActivity {
 
     RecyclerView recyclerView;
     LinearLayoutManager manager;
-
     TextView no;
     private ArrayList<Product> al;
 
@@ -66,11 +65,8 @@ public class AssetList extends AppCompatActivity {
      //   readFromLocalStorage();
       //  adapter=new MyAdapter(this,al);
         //rv.setAdapter(adapter);
-
-
-
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottomNav);
-        bottomNavigationView.setSelectedItemId(R.id.site);
+        bottomNavigationView.setSelectedItemId(R.id.list);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

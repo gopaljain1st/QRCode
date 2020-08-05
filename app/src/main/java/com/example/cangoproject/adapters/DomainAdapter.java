@@ -49,6 +49,7 @@ public class DomainAdapter extends RecyclerView.Adapter<DomainAdapter.DomainView
             @Override
             public void onClick(View v)
             {
+                hm.put("assetType","Passive");
                 hm.put("domainId",domian.getDomain_id());
                 context.startActivity(new Intent(context, RadioAsset.class).putExtra("hm",hm));
             }

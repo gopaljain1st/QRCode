@@ -36,22 +36,25 @@ android:layout_height="wrap_content">
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="35dp"
+            android:textSize="20dp"
             android:layout_toRightOf="@+id/image1"
             android:fontFamily="@font/roboto"
             android:text="Active Assets"
-            android:textColor="@color/cardview_dark_background"
-            android:textSize="22sp" />
+            android:textColor="@color/cardview_dark_background"></TextView>
         <TextView
-            android:layout_width="40dp"
+            android:layout_width="70dp"
             android:layout_height="40sp"
             android:id="@+id/nooftype"
             android:layout_marginLeft="20dp"
             android:text="120"
+            android:layout_alignParentEnd="true"
             android:padding="10dp"
+            android:textSize="12sp"
+            android:layout_marginRight="50dp"
             android:fontFamily="@font/roboto"
             android:layout_marginTop="30dp"
             android:background="@drawable/background"
-            android:layout_toRightOf="@+id/assetTypeA"></TextView>
+            ></TextView>
         <ImageView
             android:layout_width="35dp"
             android:layout_height="35dp"
